@@ -1,9 +1,13 @@
 package tests;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import Deck.Card;
+import pile.GolfTP;
 import pile.LittleSpiderTP;
 
 public class TableauPileTests {
@@ -15,7 +19,7 @@ public class TableauPileTests {
 		//pile interface, implemented by GolfTP
 		GolfTP g = new GolfTP();
 		// g.initialSetUp(); adds 5 Cards from the Deck to the method
-		g.initialSetUp();
+		g.initialSetup();
 		assertEquals(g.size(), 5);
 	}
 	/*
@@ -79,9 +83,9 @@ public class TableauPileTests {
 		g.add(aceOfSpades);
 		g.add(twoOfDiamonds);
 		g.add(threeOfSpades);
-		assertEquals("incorrect initial setup" ,g[g.size()+1], threeOfSpades);
+		assertEquals("incorrect initial setup" ,g.getPile()[g.size()+1], threeOfSpades);
 		g.remove(threeOfSpades);
-		assertEquals("incorrect method" ,g[g.size()+1], twoOfDiamonds);
+		assertEquals("incorrect method" ,g.getPile()[g.size()+1], twoOfDiamonds);
 		//		assertTrue(g.remove(threeOfSpades));
 		assertFalse(g.remove(aceOfSpades));
 	}
@@ -100,9 +104,9 @@ public class TableauPileTests {
 		ls.add(aceOfSpades);
 		ls.add(twoOfDiamonds);
 		ls.add(threeOfSpades);
-		assertEquals("incorrect initial setup, and check index first" ,ls[ls.size()+1], threeOfSpades);
+		assertEquals("incorrect initial setup, and check index first" ,ls.getPile()[ls.size()+1], threeOfSpades);
 		ls.remove(threeOfSpades);
-		assertEquals("incorrect method" ,ls[ls.size()+1], twoOfDiamonds);
+		assertEquals("incorrect method" ,ls.getPile()[ls.size()+1], twoOfDiamonds);
 		assertFalse(ls.remove(aceOfSpades));
 	}
 	/*
@@ -123,7 +127,7 @@ public class TableauPileTests {
 		ls.add(threeOfSpades);
 		int sz2 = ls.size();
 		assertEquals(sz2, sz1+1);
-		assertEquals(threeOfSpades, ls[sz1]);
+		assertEquals(threeOfSpades, ls.getPile()[sz1]);
 	}
 	/*
 	 * Removing card from Golf tableau pile decreases its number 
@@ -132,7 +136,7 @@ public class TableauPileTests {
 	 */
 	@Test
 	public void testGolfLessTP() {
-		GolfTP g = new GoldTP();
+		GolfTP g = new GolfTP();
 		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(1, "Diamond");
@@ -144,7 +148,7 @@ public class TableauPileTests {
 		g.remove(threeOfSpades);
 		int sz2 = g.size();
 		assertEquals(sz2, sz1-1);
-		assertEquals(twoOfDiamonds, g[sz2-1]);
+		assertEquals(twoOfDiamonds, g.getPile()[sz2-1]);
 	}
 	/*
 	 * Removing card from Little Spider's tableau pile decreases 
@@ -165,7 +169,7 @@ public class TableauPileTests {
 		ls.remove(threeOfSpades);
 		int sz2 = ls.size();
 		assertEquals(sz2, sz1-1);
-		assertEquals(twoOfDiamonds, ls[sz2-1]);
+		assertEquals(twoOfDiamonds, ls.getPile()[sz2-1]);
 	}
 
 }

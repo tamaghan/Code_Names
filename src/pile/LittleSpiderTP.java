@@ -1,11 +1,18 @@
 package pile;
 
-public class LittleSpiderTP implements Pile{
+import Deck.Card;
+
+public class LittleSpiderTP extends Pile1{
+	
+
+	
+	/*
+	 * Class will define behavior of each Tableau pile in little spider game
+	 */
 
 	@Override
 	public void initialSetup() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 
 	@Override
@@ -19,5 +26,10 @@ public class LittleSpiderTP implements Pile{
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	
+	
+	
+	
 
 }
