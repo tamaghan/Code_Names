@@ -1,20 +1,13 @@
 package pile;
 
 import Deck.Card;
-import Deck.Deck;
 
-// comment
-
-public class GolfTP extends Pile{
-	/*
-	 * Class will define behavior of each Tableau pile in golf game
-	 */
-
+public class Stock extends Pile{
 
 	@Override
 	public void initialSetup() {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -29,5 +22,4 @@ public class GolfTP extends Pile{
 		return false;
 	}
 
-	
 }
