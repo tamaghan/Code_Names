@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import Deck.Card;
 import pile.GolfTP;
+import pile.Stock;
 
 public class StockPileTests {
 	/*
