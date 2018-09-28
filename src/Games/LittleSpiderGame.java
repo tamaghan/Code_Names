@@ -1,5 +1,6 @@
 package Games;
 import pile.LittleSpiderTP;
+import pile.SpiderHomecellPile;
 
 //Each game instance has 8 tableau piles, 4 homecell piles, and 0 stock piles
 public class LittleSpiderGame {
@@ -12,10 +13,9 @@ public class LittleSpiderGame {
 	private LittleSpiderTP tp6;
 	private LittleSpiderTP tp7;
 	private LittleSpiderTP tp8;
-	private LittleSpiderHome home1;
-	private LittleSpiderHome home2;
-	private LittleSpiderHome home3;
-	private LittleSpiderHome home4;
-	private LittleSpiderStock stock;
+	private SpiderHomecellPile home1;
+	private SpiderHomecellPile home2;
+	private SpiderHomecellPile home3;
+	private SpiderHomecellPile home4;
 
 }
