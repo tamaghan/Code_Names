@@ -79,15 +79,11 @@ public class TableauPileTests {
 		// not calling initialSetup for testing purposes
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(1, "Diamond");
-		Card threeOfSpades = new Card(3, "Spade");
 		g.add(aceOfSpades);
 		g.add(twoOfDiamonds);
-		g.add(threeOfSpades);
-		assertEquals("incorrect initial setup" ,g.getPile()[g.size()+1], threeOfSpades);
-		g.remove(threeOfSpades);
-		assertEquals("incorrect method" ,g.getPile()[g.size()+1], twoOfDiamonds);
-		//		assertTrue(g.remove(threeOfSpades));
-		assertFalse(g.remove(aceOfSpades));
+		assertTrue(g.remove());
+		assertTrue(g.remove());
+		assertFalse(g.remove());
 	}
 	/*
 	 * Little Spider tableau pile correctly returns if 
@@ -100,14 +96,11 @@ public class TableauPileTests {
 		//not calling initial setup for testing 
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(1, "Diamond");
-		Card threeOfSpades = new Card(3, "Spade");
 		ls.add(aceOfSpades);
 		ls.add(twoOfDiamonds);
-		ls.add(threeOfSpades);
-		assertEquals("incorrect initial setup, and check index first" ,ls.getPile()[ls.size()+1], threeOfSpades);
-		ls.remove(threeOfSpades);
-		assertEquals("incorrect method" ,ls.getPile()[ls.size()+1], twoOfDiamonds);
-		assertFalse(ls.remove(aceOfSpades));
+		assertTrue(ls.remove());
+		assertTrue(ls.remove());
+		assertFalse(ls.remove());
 	}
 	/*
 	 * Adding card to Little Spider's tableau pile increases 
@@ -145,7 +138,7 @@ public class TableauPileTests {
 		g.add(twoOfDiamonds);
 		g.add(threeOfSpades);
 		int sz1 = g.size();
-		g.remove(threeOfSpades);
+		g.remove();
 		int sz2 = g.size();
 		assertEquals(sz2, sz1-1);
 		assertEquals(twoOfDiamonds, g.getPile()[sz2-1]);
@@ -156,7 +149,7 @@ public class TableauPileTests {
 	 * new top card
 	 */
 	@Test
-	public void testf() {
+	public void testLSDec() {
 		LittleSpiderTP ls = new LittleSpiderTP();
 		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spade");
@@ -166,7 +159,7 @@ public class TableauPileTests {
 		ls.add(twoOfDiamonds);
 		ls.add(threeOfSpades);
 		int sz1 = ls.size();
-		ls.remove(threeOfSpades);
+		ls.remove();
 		int sz2 = ls.size();
 		assertEquals(sz2, sz1-1);
 		assertEquals(twoOfDiamonds, ls.getPile()[sz2-1]);

@@ -24,7 +24,7 @@ public class GolfTP extends Pile1{
 	}
 
 	@Override
-	public boolean remove(Card c) {
+	public boolean remove() {
 		// TODO Auto-generated method stub
 		return false;
 	}

@@ -9,7 +9,7 @@ public abstract class Pile1 {
 	private Card[] pile;
 	abstract void initialSetup();
 	abstract boolean add(Card c);
-	abstract boolean remove(Card c);
+	abstract boolean remove();
 	public Card[] getPile() {
 		return pile;
 	}
@@ -19,13 +19,14 @@ public abstract class Pile1 {
 	public int size() {
 		int i = 0;
 		ArrayList<Card> cards = new ArrayList<Card>();
-		for(Card j : pile) {
-			cards.add(j);
-			i=i+1;
+		if(pile.length>1) {
+			for(Card j : pile) {
+				cards.add(j);
+				i=i+1;
+			}
 		}
-		
 		return i;
-		
+
 	}
-	
+
 }
