@@ -10,6 +10,7 @@ public class GolfHomecellPile extends Pile {
 	public Card topCard() {
 		return super.topCard();
 	}
+	
 	public boolean add(Card c) {
 		// TODO Auto-generated method stub
 		return false;

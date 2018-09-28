@@ -32,4 +32,5 @@ public class GolfTP extends Pile{
 		return super.topCard();
 	}
 	
+	
 }

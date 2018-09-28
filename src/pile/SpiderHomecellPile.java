@@ -20,4 +20,5 @@ public class SpiderHomecellPile extends Pile {
 	public Card topCard() {
 		return super.topCard();
 	}
+	
 }

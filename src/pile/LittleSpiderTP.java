@@ -12,6 +12,7 @@ public class LittleSpiderTP extends Pile{
 	public Card topCard() {
 		return super.topCard();
 	}
+	
 	@Override
 	public void initialSetup() {
 		// TODO Auto-generated method stub		

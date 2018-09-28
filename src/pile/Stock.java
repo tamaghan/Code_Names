@@ -24,5 +24,6 @@ public class Stock extends Pile{
 	public Card topCard() {
 		return super.topCard();
 	}
+	
 
 }
