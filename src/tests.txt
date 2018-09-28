@@ -2,29 +2,52 @@ Submission includes a tests.txt file listing the class and method name(s) of
 the test(s) defined for each of these requirements [2 points]
 
 Tableau pile tests: [36 points]
-Tableau piles in Golf initially hold 5 cards [4 points]
-Tableau piles in Little Spider initially hold 6 cards [4 points]
-Golf tableau pile correctly determines if adding a specific card is legal or illegal (e.g., the method should always return false) [4 points]
-Little Spider tableau pile correctly determines if adding a specific card is legal or illegal [4 points]
-Golf tableau pile correctly returns if removing top card is legal or illegal (e.g., if the tableau pile is NOT empty) [4 points]
-Little Spider tableau pile correctly returns if removing top card is legal or illegal (e.g., if the tableau pile is NOT empty) [4 points]
-Adding card to Little Spider's tableau pile increases its number of cards and results in that card being the tableau pile's new top card [4 points]
-Removing card from Golf tableau pile decreases its number of cards and results in following card being the new top card [4 points]
-Removing card from Little Spider's tableau pile decreases its number of cards and results in following card being the new top card [4 points]
-
+	* All tests for Tableau pile are located under tests package, TalbeauPileTest class
+	-Tableau piles in Golf initially hold 5 cards [4 points]
+		*testInitialGolfTP
+	-Tableau piles in Little Spider initially hold 6 cards [4 points]
+		*testInitialLSTP
+	-Golf tableau pile correctly determines if adding a specific card is legal or illegal (e.g., the method should always return false) [4 points]
+		*testGolfTPAdd
+	-Little Spider tableau pile correctly determines if adding a specific card is legal or illegal [4 points]
+		*testLSTPAdd
+	-Golf tableau pile correctly returns if removing top card is legal or illegal (e.g., if the tableau pile is NOT empty) [4 points]
+		*testGolfTPRemove
+	-Little Spider tableau pile correctly returns if removing top card is legal or illegal (e.g., if the tableau pile is NOT empty) [4 points]
+		*testLSTPRemove
+	-Adding card to Little Spider's tableau pile increases its number of cards and results in that card being the tableau pile's new top card [4 points]
+		*testNewLSTP
+	-Removing card from Golf tableau pile decreases its number of cards and results in following card being the new top card [4 points]
+		*testGolfLessTP
+	-Removing card from Little Spider's tableau pile decreases its number of cards and results in following card being the new top card [4 points]
+		*testLSDec
+		
 Homecell pile tests: [36 points]
-Homecell pile in Golf initially holds 0 cards [4 points]
-Homecell piles in Little Spider initially hold 1 card [4 points]
-Golf homecell pile correctly determines if adding a card is legal or illegal To receive points, your test(s) cannot call one method for when the card comes from the stock pile and a different method for when the card comes from a tableau pile. [6 points]
-Little Spider homecell piles correctly determines if adding a specific card is legal or illegal [4 points]
-Golf homecell pile correctly returns if removing top card is legal or illegal (e.g., always false) [4 points]
-Little Spider homecell pile correctly returns if removing top card is legal or illegal (e.g., if the homecell pile has 2 or more cards) [4 points]
-Adding card to Golf homecell pile increases its number of cards and results in that card being the homecell pile's new top card [4 points]
-Adding card to Little Spider's homecell pile increases its number of cards and results in that card being the homecell pile's new top card [4 points]
-Removing card from one of Little Spider's homecell pile decreases its number of cards and results in following card being the new top card [4 points]
-
+	-Homecell pile in Golf initially holds 0 cards [4 points]
+		*
+	-Homecell piles in Little Spider initially hold 1 card [4 points]
+		*
+	-Golf homecell pile correctly determines if adding a card is legal or illegal To receive points, your test(s) cannot call one method for when the card comes from the stock pile and a different method for when the card comes from a tableau pile. [6 points]
+		*
+	-Little Spider homecell piles correctly determines if adding a specific card is legal or illegal [4 points]
+		*
+	-Golf homecell pile correctly returns if removing top card is legal or illegal (e.g., always false) [4 points]
+		*
+	-Little Spider homecell pile correctly returns if removing top card is legal or illegal (e.g., if the homecell pile has 2 or more cards) [4 points]
+		*
+	-Adding card to Golf homecell pile increases its number of cards and results in that card being the homecell pile's new top card [4 points]
+		*
+	-Adding card to Little Spider's homecell pile increases its number of cards and results in that card being the homecell pile's new top card [4 points]
+		*
+	-Removing card from one of Little Spider's homecell pile decreases its number of cards and results in following card being the new top card [4 points]
+		*
+		
 Stock pile tests: [8 points]
-Golf stock initially holds 17 cards [2 points]
-Golf stock pile correctly returns if adding a specific card is legal or illegal (e.g., the method should always return false) [2 points]
-Golf stock pile correctly returns if removing top card is legal or illegal (e.g., if the stock pile is NOT empty) [2 points]
-Removing card from Golf's stock pile decreases its number of cards and results in following card being the new top card [2 points]
+	-Golf stock initially holds 17 cards [2 points]
+		*testInitialStock
+	-Golf stock pile correctly returns if adding a specific card is legal or illegal (e.g., the method should always return false) [2 points]
+		*testAddStock
+	-Golf stock pile correctly returns if removing top card is legal or illegal (e.g., if the stock pile is NOT empty) [2 points]
+		*testStockRemove
+	-Removing card from Golf's stock pile decreases its number of cards and results in following card being the new top card [2 points]
+		*testStockDec
