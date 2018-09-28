@@ -1,11 +1,9 @@
 package Games;
-
 import pile.GolfTP;
 
 /*Defines class representing a Golf game. 
  * Each game instance has 7 tableau piles, 1 homecell pile, and 1 stock pile [4 points]
  */
-
 public class GolfGame {
 	private GolfTP tp1;
 	private GolfTP tp2;

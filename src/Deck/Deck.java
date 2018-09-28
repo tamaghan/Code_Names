@@ -1,5 +1,6 @@
 package Deck;
 
+//Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank [6 points]
 public class Deck { 
 	private Card[] cardDeck;
 
@@ -9,7 +10,7 @@ public class Deck {
 		
 		// Creates 'club' suit (Black)
 		for (int i = 0; i<13; i++) {
-			cardDeck[i] = new Card(1+i,"Club");
+			cardDeck[i] = new Card(1+i,"Clubs");
 		}
 		
 		// Creates 'Diamonds' suit (Red)
