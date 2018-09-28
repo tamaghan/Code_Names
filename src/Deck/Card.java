@@ -1,5 +1,9 @@
 package Deck;
-
+/**
+ * Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank
+ * @author  tamaghan , dandrijje, fmdestin
+ *
+ */
 public class Card {
 	// Creates an int and string instance
 	private int rank;
@@ -30,7 +34,11 @@ public class Card {
 		return this.suit;
 	}
 	
-	// Used for testing, ignore
+	/**
+	 *  Used for testing, ignore
+	 *  
+	 */
+	
 	public void testReturn() {
 		System.out.println("My rank is " + rank + ". My suit is " + suit);
 	}

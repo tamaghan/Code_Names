@@ -1,6 +1,12 @@
 package pile;
 
 import Deck.Card;
+/**
+ *  Class will define behavior of each Tableau pile in little spider game
+ * @author tamaghan , dandrijje, fmdestin, 
+ * @version 1.0 
+ *
+ */
 
 public class LittleSpiderTP extends Pile{
 	

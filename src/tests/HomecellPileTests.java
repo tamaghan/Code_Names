@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import Deck.Card;
 import pile.GolfHomecellPile;
+import pile.GolfTP;
 import pile.GolfHomecellPile;
 import pile.SpiderHomecellPile;
 
@@ -43,12 +44,14 @@ public class HomecellPileTests {
 	 * call one method for when the card comes from the stock pile 
 	 * and a different method for when the card comes from a tableau pile.
 	 */
+	
+	
 	@Test
 	public void testGolfHomecellPileAdd() {
 		GolfHomecellPile g = new GolfHomecellPile();
 		GolfHomecellPile g2 = new GolfHomecellPile();
 		GolfHomecellPile g3 = new GolfHomecellPile();
-		GolfHomecellPile g4 = new GolfHomecellPile();
+		GolfTP g4 = new GolfTP();
 		//Will have to be able to call add during initial setup, but not allow cards to be added afterward
 		g.initialSetup();
 		Card aceOfSpades = new Card(1, "Spades");

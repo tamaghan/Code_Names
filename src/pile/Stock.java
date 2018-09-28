@@ -2,6 +2,14 @@ package pile;
 
 import Deck.Card;
 
+/**
+ * The stock pile contains the 
+ * cards that have not been dealt. Each game has its own 
+ * rules for how cards are dealt from the stock pile.
+ * @author tamaghan , dandrijje, fmdestin, 
+ *
+ */
+
 public class Stock extends Pile{
 
 	@Override

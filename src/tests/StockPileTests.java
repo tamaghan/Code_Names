@@ -23,7 +23,7 @@ public class StockPileTests {
 	/*
 	 * Golf stock pile correctly returns if adding a specific card 
 	 * is legal or illegal 
-	 * (e.g., the method should always return false)
+	 * (e.g., the method should always return false).
 	 */
 	@Test
 	public void testAddStock() {

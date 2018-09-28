@@ -3,13 +3,14 @@ package pile;
 import Deck.Card;
 import Deck.Deck;
 
-// comment
+/**
+ *   Class will define behavior of each Tableau pile in golf game
+ * @author tamaghan , dandrijje, fmdestin, 
+ * @version 1.0 
+ *
+ */
 
 public class GolfTP extends Pile{
-	/*
-	 * Class will define behavior of each Tableau pile in golf game
-	 */
-
 
 	@Override
 	public void initialSetup() {
