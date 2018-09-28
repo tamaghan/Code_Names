@@ -5,6 +5,12 @@ import java.util.ArrayList;
 import Deck.Card;
 import Deck.Deck;
 
+/**
+ *  
+ * @author tamaghan , dandrijje, fmdestin, 
+ * @version 3.0 
+ *
+ */
 public abstract class Pile {
 	private Card[] pile;
 	abstract void initialSetup();
