@@ -82,9 +82,7 @@ public class TableauPileTests {
 		g.add(aceOfSpades);
 		g.add(twoOfDiamonds);
 		assertTrue(g.remove());
-		g.remove();
 		assertTrue(g.remove());
-		g.remove();
 		assertFalse(g.remove());
 	}
 	/*
