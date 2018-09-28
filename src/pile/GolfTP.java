@@ -5,7 +5,7 @@ import Deck.Deck;
 
 // comment
 
-public class GolfTP extends Pile1{
+public class GolfTP extends Pile{
 	/*
 	 * Class will define behavior of each Tableau pile in golf game
 	 */

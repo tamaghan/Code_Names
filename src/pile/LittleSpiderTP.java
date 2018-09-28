@@ -2,7 +2,7 @@ package pile;
 
 import Deck.Card;
 
-public class LittleSpiderTP extends Pile1{
+public class LittleSpiderTP extends Pile{
 	
 
 	

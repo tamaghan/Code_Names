@@ -2,7 +2,7 @@ package pile;
 
 import Deck.Card;
 
-public class Stock extends Pile1{
+public class Stock extends Pile{
 
 	@Override
 	public void initialSetup() {
