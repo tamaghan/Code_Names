@@ -13,7 +13,7 @@ import pile.LittleSpiderTP;
 public class Homecellpiletests {
 	
 	/*
-	 * Homecell pile in Golf initially holds 0 cards
+	 * Homecell pile in Golf initially holds 0 cards..
 	 */
 	@Test
 	public void testInitialGolfHP() {
