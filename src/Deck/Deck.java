@@ -1,6 +1,10 @@
 package Deck;
 
-//Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank [6 points]
+/**
+ * Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank [6 points]
+ * @author HP
+ *
+ */
 public class Deck { 
 	// Creates an array of Card objects
 	private Card[] cardDeck;
