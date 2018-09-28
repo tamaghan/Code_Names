@@ -1,12 +1,11 @@
 package Deck;
 
 public class Deck { 
-    //Defines Deck class which creates 52 Card instances. 
-	//Each Card instance has unique combination of suit & rank [6 points]
-	
+	private Card[] cardDeck;
+
 	public Deck() {
 		// Creates 52 card, index 0 to index 51
-		Card[] cardDeck = new Card[52];
+		this.cardDeck = new Card[52];
 		
 		// Creates 'club' suit (Black)
 		for (int i = 0; i<13; i++) {
@@ -28,6 +27,17 @@ public class Deck {
 			cardDeck[i] = new Card(i-38,"Spades");
 		}
 	}
+
+
+	public Card[] getCardDeck() {
+		return cardDeck;
+	}
+
+
+	public void setCardDeck(Card[] cardDeck) {
+		this.cardDeck = cardDeck;
+	}
+
 }
 
 
