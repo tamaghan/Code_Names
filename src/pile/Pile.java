@@ -10,6 +10,9 @@ public abstract class Pile {
 	abstract void initialSetup();
 	abstract boolean add(Card c);
 	abstract boolean remove();
+	public Card topCard() {
+		return pile[this.size()-1];
+	}
 	public Card[] getPile() {
 		return pile;
 	}
@@ -28,5 +31,6 @@ public abstract class Pile {
 		return i;
 
 	}
+	
 
 }

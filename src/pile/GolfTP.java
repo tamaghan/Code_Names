@@ -28,6 +28,8 @@ public class GolfTP extends Pile{
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	public Card topCard() {
+		return super.topCard();
+	}
 	
 }
