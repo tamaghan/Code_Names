@@ -60,7 +60,7 @@ public class TableauPileTests {
 		LittleSpiderTP ls = new LittleSpiderTP();
 		//not calling initialSetup for testing purposes. initialSetup will be called when pile is made in game class constructor.
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		Card threeOfSpades = new Card(3, "Spade");
 		Card eightOfHearts = new Card(8, "Heart");
 		Card kingOfClubs = new Card(13, "Club");
@@ -78,11 +78,13 @@ public class TableauPileTests {
 		GolfTP g = new GolfTP();
 		// not calling initialSetup for testing purposes
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		g.add(aceOfSpades);
 		g.add(twoOfDiamonds);
 		assertTrue(g.remove());
+		g.remove();
 		assertTrue(g.remove());
+		g.remove();
 		assertFalse(g.remove());
 	}
 	/*
@@ -95,7 +97,7 @@ public class TableauPileTests {
 		LittleSpiderTP ls = new LittleSpiderTP();
 		//not calling initial setup for testing 
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		ls.add(aceOfSpades);
 		ls.add(twoOfDiamonds);
 		assertTrue(ls.remove());
@@ -112,7 +114,7 @@ public class TableauPileTests {
 		LittleSpiderTP ls = new LittleSpiderTP();
 		//not calling initialSetup for this test
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		Card threeOfSpades = new Card(3, "Spade");
 		ls.add(aceOfSpades);
 		ls.add(twoOfDiamonds);
@@ -132,7 +134,7 @@ public class TableauPileTests {
 		GolfTP g = new GolfTP();
 		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		Card threeOfSpades = new Card(3, "Spade");
 		g.add(aceOfSpades);
 		g.add(twoOfDiamonds);
@@ -153,7 +155,7 @@ public class TableauPileTests {
 		LittleSpiderTP ls = new LittleSpiderTP();
 		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(1, "Diamond");
+		Card twoOfDiamonds = new Card(2, "Diamond");
 		Card threeOfSpades = new Card(3, "Spade");
 		ls.add(aceOfSpades);
 		ls.add(twoOfDiamonds);
