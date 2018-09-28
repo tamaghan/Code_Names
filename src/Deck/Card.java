@@ -5,7 +5,7 @@ public class Card {
 	private int rank;
 	private String suit;
 	
-	// Constructor for this class, two params rank, suit
+	// Constructor for this class, two params rank, suit.
 	public Card (int rank, String suit) {
 		// Sets the instances equal to params
 		this.rank = rank;
