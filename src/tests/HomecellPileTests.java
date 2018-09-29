@@ -138,6 +138,7 @@ public class HomecellPileTests {
 		ls.addForTesting(2, threeOfHearts);
 		assertTrue(ls.remove());
 		assertTrue(ls.remove());
+		assertTrue(ls.remove());
 		assertFalse(ls.remove());
 	}
 	

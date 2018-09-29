@@ -19,9 +19,10 @@ public class Stock extends Pile{
 	@Override
 	public void initialSetup(Deck d, Card[] c) {
 		is=true;
+		int size = d.deckSize;
 		for(int i=0; i<17; i++) {
-			this.pile[i]=c[i+35];
-			size=size+1;
+			this.pile[i]=c[i];
+			this.size=this.size+1;
 		}
 		
 	}

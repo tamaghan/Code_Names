@@ -16,6 +16,29 @@ public class SpiderHomecellPile extends Pile {
 	
 	public void initialSetup(Deck d,Card[] c) {
 		is=true;
+		if(d.deckSize==52) {
+			pile[0]= new Card(1,"Diamonds");
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1;
+		}else if(d.deckSize==51) {
+			pile[0]= new Card(1,"Hearts");
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1;
+		}else if(d.deckSize==50) {
+			pile[0]= new Card(13,"Clubs");
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1;
+		}else if(d.deckSize==49) {
+			pile[0]= new Card(13,"Spades");
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1;
+		} 
+		for(int i=0; i<d.deckSize; i++) {
+			if(c[i]==pile[0]) {
+				
+			}
+		}
+		
 		
 	}
 	public boolean add(Card c) {

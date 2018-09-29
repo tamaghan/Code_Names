@@ -23,10 +23,12 @@ public class LittleSpiderTP extends Pile{
 	
 	@Override
 	public void initialSetup(Deck d,Card[] c) {
-		is=true;	
+		is=true;
+		int size = d.deckSize;
 		for(int i = 0; i<6; i++) {
-			this.pile[i]=c[i];
-			size=size+1;
+			this.pile[i]=c[size-1-i];
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1; 
 		}
 	}
 
