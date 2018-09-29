@@ -25,7 +25,7 @@ public class GolfTP extends Pile{
 		for(int i = 0; i<5; i++) {
 			this.pile[i]=c[size-1-i];
 			this.size=this.size+1;
-			d.deckSize=d.deckSize-1;
+			d.deckSize=d.deckSize-1;  
 		}
 	}
 
