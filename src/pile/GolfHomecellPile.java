@@ -1,6 +1,7 @@
 package pile;
 
 import Deck.Card;
+import Deck.Deck;
 /**
  *  Class will define behavior of each home cell pile in little spider game
  * @author tamaghan , dandrijje, fmdestin, 
@@ -9,22 +10,39 @@ import Deck.Card;
  */
 
 public class GolfHomecellPile extends Pile {
-	public void initialSetup() {
-		// TODO Auto-generated method stub
 
+//	public GolfHomecellPile() {
+//		pile = new Card[52];
+//	}
+	private boolean is;
+
+	public void initialSetup(Card[] c) {
+		is=true;
 	}
-	public Card topCard() {
-		return super.topCard();
-	}
-	
+	//	public Card topCard() {
+	//		return super.topCard();
+	//	}
+
 	public boolean add(Card c) {
-		// TODO Auto-generated method stub
-		return false;
-		
+		boolean returnVal=false; 
+		if(this.topCard().getRank()==c.getRank()+1||this.topCard().getRank()==c.getRank()-1) {
+			pile[size]=c;
+			size=size+1;
+			returnVal=true;
+		}else if(this.topCard().getRank()==13&&c.getRank()==1) {
+			pile[size]=c;
+			size=size+1;
+			returnVal=true;
+		}else if(this.topCard().getRank()==1&&c.getRank()==13) {
+			pile[size]=c;
+			size=size+1;
+			returnVal=true;
+		}
+		return returnVal;
 	}
 
 	public boolean remove() {
-		// TODO Auto-generated method stub
 		return false;
 	}
+
 }

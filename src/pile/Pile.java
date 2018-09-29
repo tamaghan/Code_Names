@@ -12,11 +12,16 @@ import Deck.Deck;
  *
  */
 public abstract class Pile {
-	private Card[] pile;
-	abstract void initialSetup();
+	public Card[] pile;
+	
+	public Pile() {
+		pile=new Card[52];
+	}
+	public int size;
+	abstract void initialSetup(Card[] c);
 	abstract boolean add(Card c);
 	abstract boolean remove();
-	
+
 	public Card topCard() {
 		return pile[this.size()-1];
 	}
@@ -27,18 +32,19 @@ public abstract class Pile {
 		this.pile = pile;
 	}
 	public int size() {
-		int i = 0;
-		ArrayList<Card> cards = new ArrayList<Card>();
-		if(pile.length>1) {
-			for(Card j : pile) {
-				cards.add(j);
-				i=i+1;
-			}
-		}
-		return i;
+		return size;
+		//		int returnVal=0;
+		//		for(int i = 0; i<pile.length ; i++) {
+		//			if(pile[i]!=null) {
+		//				returnVal= returnVal+1;
+		//			}
+		//		}
+		//		return returnVal;
 
 	}
-	
-	
+	public void addForTesting(int i, Card c) {
+		pile[i]=c;
+		size=size+1;
+	}
 
 }

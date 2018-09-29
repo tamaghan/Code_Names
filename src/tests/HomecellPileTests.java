@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import Deck.Card;
+import Deck.Deck;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
 import pile.GolfHomecellPile;
@@ -21,8 +22,10 @@ public class HomecellPileTests {
 	public void testInitialGolfHomecellPile() {
 		//pile interface, implemented by GolfHomecellPile
 		GolfHomecellPile g = new GolfHomecellPile();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
 		// g.initialSetUp(); adds  Cards from the Deck to the method
-		g.initialSetup();
+		g.initialSetup(c);
 		assertEquals(g.size(), 0);
 	}
 	
@@ -33,8 +36,10 @@ public class HomecellPileTests {
 	public void testInitialLSHP() {
 		// pile interface, implemented by SpiderHomecellPile
 		SpiderHomecellPile ls = new SpiderHomecellPile();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
 		// ls.initialSetUp(); adds 1 Cards from the Deck to the method
-		ls.initialSetup();
+		ls.initialSetup(c);
 		assertEquals(ls.size(), 1);
 	}
 	
@@ -52,16 +57,18 @@ public class HomecellPileTests {
 		GolfHomecellPile g2 = new GolfHomecellPile();
 		GolfHomecellPile g3 = new GolfHomecellPile();
 		GolfTP g4 = new GolfTP();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
 		//Will have to be able to call add during initial setup, but not allow cards to be added afterward
-		g.initialSetup();
+		g.initialSetup(c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");
 		Card queenOfHearts = new Card(12, "Hearts");
-		g.add(aceOfSpades);
-		g2.add(queenOfHearts);
-		g3.add(eightOfHearts);
-		g4.add(kingOfClubs);
+		g.addForTesting(0, aceOfSpades);
+		g2.addForTesting(0, queenOfHearts);
+		g3.addForTesting(0, eightOfHearts);
+		g4.addForTesting(0, kingOfClubs);
 		assertTrue(g.add(kingOfClubs));
 		assertTrue(g2.add(kingOfClubs));
 		assertFalse(g2.add(kingOfClubs));
@@ -81,15 +88,20 @@ public class HomecellPileTests {
 		Card aceOfHearts = new Card(1, "Hearts");
 		Card twoOfHearts = new Card(2, "Hearts");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
-		Card threeOfSpades = new Card(3, "Spades");
 		Card eightOfSpades = new Card(8, "Spades");
+		Card queenOfClubs = new Card(12, "Clubs");
 		Card kingOfClubs = new Card(13, "Clubs");
-		ls.add(aceOfHearts);
+		ls.addForTesting(0, aceOfHearts);
+		ls1.addForTesting(0, kingOfClubs);
 		assertFalse(ls.add(kingOfClubs));
 		assertFalse(ls.add(twoOfDiamonds));
 		assertTrue(ls.add(twoOfHearts));
 		assertFalse(ls.add(eightOfSpades));
 		assertEquals(ls.topCard(), twoOfHearts);
+		assertTrue(ls1.add(queenOfClubs));
+		assertFalse(ls1.add(eightOfSpades));
+		assertEquals(ls1.topCard(), queenOfClubs);
+		
 	}
 	
 	/*
@@ -99,11 +111,9 @@ public class HomecellPileTests {
 	@Test
 	public void testGolfHomecellPileRemove() {
 		GolfHomecellPile g = new GolfHomecellPile();
-		// not calling initialSetup for testing purposes
-		Card aceOfSpades = new Card(1, "Spades");
-		Card twoOfDiamonds = new Card(2, "Diamonds");
-		g.add(aceOfSpades);
-		g.add(twoOfDiamonds);
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
+		g.initialSetup(c);
 		assertFalse(g.remove());
 	}
 	
@@ -118,8 +128,15 @@ public class HomecellPileTests {
 		//not calling initial setup for testing 
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
+		Card threeOfHearts = new Card(3, "Hearts");
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
+		ls.initialSetup(c);
+		assertFalse(ls.remove());
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
+		ls.addForTesting(2, threeOfHearts);
+		assertTrue(ls.remove());
 		assertTrue(ls.remove());
 		assertFalse(ls.remove());
 	}
@@ -130,14 +147,14 @@ public class HomecellPileTests {
 	 *  being the homecell pile's new top card 
 	 */
 	@Test
-	public void testNewLSHP() {
+	public void testincreaseGolfHP() {
 		GolfHomecellPile g = new GolfHomecellPile();
 		//not calling initialSetup for this test
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
-		g.add(aceOfSpades);
-		g.add(twoOfDiamonds);
+		g.addForTesting(0, aceOfSpades);
+		g.addForTesting(1, twoOfDiamonds);
 		int sz1 = g.size();
 		g.add(threeOfSpades);
 		int sz2 = g.size();
@@ -151,16 +168,16 @@ public class HomecellPileTests {
 	 *  cards and results in that card being the homecell pile's new top card 
 	 */
 	@Test
-	public void testNewLSHP1() {
+	public void testIncreaseLSHP() {
 		SpiderHomecellPile ls = new SpiderHomecellPile();
 		//not calling initialSetup for this test
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
 		int sz1 = ls.size();
-		ls.add(threeOfSpades);
+		ls.addForTesting(2, threeOfSpades);
 		int sz2 = ls.size();
 		assertEquals(sz2, sz1+1);
 		assertEquals(threeOfSpades, ls.getPile()[sz1]);
@@ -172,15 +189,15 @@ public class HomecellPileTests {
 	 * number of cards and results in following card being the new top card 
 	 */
 	@Test
-	public void testGolfLessHP() {
+	public void testLSDecHP() {
 		SpiderHomecellPile ls = new SpiderHomecellPile();
 		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
-		ls.add(threeOfSpades);
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
+		ls.addForTesting(2, threeOfSpades);
 		int sz1 = ls.size();
 		ls.remove();
 		int sz2 = ls.size();

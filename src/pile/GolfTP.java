@@ -12,22 +12,39 @@ import Deck.Deck;
 
 public class GolfTP extends Pile{
 
+	private boolean is;
+//	public GolfTP() {
+//		pile = new Card[52];
+//	}
+	
 	@Override
-	public void initialSetup() {
-		// TODO Auto-generated method stub
-
+	public void initialSetup(Card[] c) {
+		is=true;
+		for(int i = 0; i<5; i++) {
+			this.pile[i]=c[i];
+			size=size+1;
+		}
 	}
 
 	@Override
 	public boolean add(Card c) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean returnVal = false;
+		if(!is) {
+			pile[size()]=c;
+			size=size+1;
+			return true;
+		}
+		return returnVal;
 	}
 
 	@Override
 	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
+		if(size()==0) {
+			return false;
+		}
+		pile[size()-1]=null;
+		size=size-1;
+		return true;
 	}
 	public Card topCard() {
 		return super.topCard();

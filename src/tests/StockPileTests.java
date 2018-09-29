@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import Deck.Card;
+import Deck.Deck;
 import pile.GolfTP;
 import pile.Stock;
 
@@ -17,7 +18,9 @@ public class StockPileTests {
 	@Test
 	public void testInitialStock() {
 		Stock g = new Stock();
-		g.initialSetup();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
+		g.initialSetup(c);
 		assertEquals(g.size(), 17);
 	}
 	/*
@@ -28,7 +31,9 @@ public class StockPileTests {
 	@Test
 	public void testAddStock() {
 		Stock g = new Stock();
-		g.initialSetup();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
+		g.initialSetup(c);
 		Card aceOfSpades = new Card(1, "Spade");
 		Card eightOfHearts = new Card(8, "Heart");
 		Card kingOfClubs = new Card(13, "Club");
@@ -47,8 +52,8 @@ public class StockPileTests {
 		// not calling initialSetup for testing purposes
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(2, "Diamond");
-		g.add(aceOfSpades);
-		g.add(twoOfDiamonds);
+		g.addForTesting(0, aceOfSpades);
+		g.addForTesting(0, aceOfSpades);
 		assertTrue(g.remove());
 		assertTrue(g.remove());
 		assertFalse(g.remove());
@@ -62,18 +67,20 @@ public class StockPileTests {
 	@Test
 	public void testStockDec() {
 		Stock g = new Stock();
-		// not calling initialSetup
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(2, "Diamond");
 		Card threeOfSpades = new Card(3, "Spade");
-		g.add(aceOfSpades);
-		g.add(twoOfDiamonds);
-		g.add(threeOfSpades);
+//		Deck d = new Deck();
+//		Card[] c = d.cardDeck;
+//		g.initialSetup(c);
+		g.addForTesting(0, aceOfSpades);
+		g.addForTesting(1, twoOfDiamonds);
+		g.addForTesting(2, threeOfSpades);
 		int sz1 = g.size();
 		g.remove();
 		int sz2 = g.size();
 		assertEquals(sz2, sz1-1);
-		assertEquals(twoOfDiamonds, g.getPile()[sz2-1]);
+		assertEquals(twoOfDiamonds, g.pile[sz2-1]);
 	}
 	
 }

@@ -7,6 +7,7 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
 import Deck.Card;
+import Deck.Deck;
 import pile.GolfTP;
 import pile.LittleSpiderTP;
 
@@ -18,8 +19,10 @@ public class TableauPileTests {
 	public void testInitialGolfTP() {
 		//pile interface, implemented by GolfTP
 		GolfTP g = new GolfTP();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
 		// g.initialSetUp(); adds 5 Cards from the Deck to the method
-		g.initialSetup();
+		g.initialSetup(c);
 		assertEquals(g.size(), 5);
 	}
 	/*
@@ -29,8 +32,10 @@ public class TableauPileTests {
 	public void testInitialLSTP() {
 		// pile interface, implemented by LittleSpiderTP
 		LittleSpiderTP ls = new LittleSpiderTP();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
 		// ls.initialSetUp(); adds 6 Cards from the Deck to the method
-		ls.initialSetup();
+		ls.initialSetup(c);
 		assertEquals(ls.size(), 6);
 	}
 	/*
@@ -41,8 +46,10 @@ public class TableauPileTests {
 	@Test
 	public void testGolfTPAdd() {
 		GolfTP g = new GolfTP();
-		//Will have to be able to call add during initial setup, but not allow cards to be added afterward
-		g.initialSetup();
+		Deck d = new Deck();
+		Card[] c = d.cardDeck;
+//		Will have to be able to call add during initial setup, but not allow cards to be added afterward
+		g.initialSetup(c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");
@@ -58,15 +65,17 @@ public class TableauPileTests {
 	@Test
 	public void testLSTPAdd() {
 		LittleSpiderTP ls = new LittleSpiderTP();
+		LittleSpiderTP ls2 = new LittleSpiderTP();
 		//not calling initialSetup for testing purposes. initialSetup will be called when pile is made in game class constructor.
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");
-		ls.add(aceOfSpades);
+		ls.addForTesting(0, aceOfSpades);
+		ls2.addForTesting(0, aceOfSpades);
 		assertTrue(ls.add(kingOfClubs));
-		assertTrue(ls.add(twoOfDiamonds));
+		assertTrue(ls2.add(twoOfDiamonds));
 		assertFalse(ls.add(eightOfHearts));
 	}
 	/*
@@ -96,8 +105,8 @@ public class TableauPileTests {
 		//not calling initial setup for testing 
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
 		assertTrue(ls.remove());
 		assertTrue(ls.remove());
 		assertFalse(ls.remove());
@@ -114,8 +123,8 @@ public class TableauPileTests {
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
 		int sz1 = ls.size();
 		ls.add(threeOfSpades);
 		int sz2 = ls.size();
@@ -155,9 +164,9 @@ public class TableauPileTests {
 		Card aceOfSpades = new Card(1, "Spades");
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfSpades = new Card(3, "Spades");
-		ls.add(aceOfSpades);
-		ls.add(twoOfDiamonds);
-		ls.add(threeOfSpades);
+		ls.addForTesting(0, aceOfSpades);
+		ls.addForTesting(1, twoOfDiamonds);
+		ls.addForTesting(2, threeOfSpades);
 		int sz1 = ls.size();
 		ls.remove();
 		int sz2 = ls.size();

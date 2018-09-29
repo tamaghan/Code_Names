@@ -13,7 +13,7 @@ package Deck;
 
 public class Deck { 
 	// Creates an array of Card objects
-	private Card[] cardDeck;
+	public Card[] cardDeck;
 
 	// Constructs a deck
 	public Deck() {

@@ -1,6 +1,7 @@
 package pile;
 
 import Deck.Card;
+import Deck.Deck;
 
 /**
  * The stock pile contains the 
@@ -12,22 +13,33 @@ import Deck.Card;
 
 public class Stock extends Pile{
 
+	
+	private boolean is;
+	
 	@Override
-	public void initialSetup() {
-		// TODO Auto-generated method stub
+	public void initialSetup(Card[] c) {
+		is=true;
+		for(int i=0; i<17; i++) {
+			this.pile[i]=c[i+35];
+			size=size+1;
+		}
 		
 	}
 
 	@Override
 	public boolean add(Card c) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean returnVal = false;
+		return returnVal;
 	}
 
 	@Override
 	public boolean remove() {
-		// TODO Auto-generated method stub
-		return false;
+		if(size()==0) {
+			return false;
+		}else
+		pile[size()-1]=null;
+		size=size-1;
+		return true;
 	}
 	public Card topCard() {
 		return super.topCard();
