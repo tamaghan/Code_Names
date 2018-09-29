@@ -14,11 +14,13 @@ package Deck;
 public class Deck { 
 	// Creates an array of Card objects
 	public Card[] cardDeck;
+	public int deckSize;
 
 	// Constructs a deck
 	public Deck() {
 		// Creates 52 card, index 0 to index 51
 		this.cardDeck = new Card[52];
+		this.deckSize=52;
 		
 		// Creates 'club' suit (Black)
 		for (int i = 0; i<13; i++) {

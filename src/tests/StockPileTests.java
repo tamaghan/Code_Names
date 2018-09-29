@@ -20,7 +20,7 @@ public class StockPileTests {
 		Stock g = new Stock();
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		assertEquals(g.size(), 17);
 	}
 	/*
@@ -33,7 +33,7 @@ public class StockPileTests {
 		Stock g = new Stock();
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spade");
 		Card eightOfHearts = new Card(8, "Heart");
 		Card kingOfClubs = new Card(13, "Club");

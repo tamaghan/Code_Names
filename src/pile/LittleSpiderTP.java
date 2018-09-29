@@ -22,7 +22,7 @@ public class LittleSpiderTP extends Pile{
 //	}
 	
 	@Override
-	public void initialSetup(Card[] c) {
+	public void initialSetup(Deck d,Card[] c) {
 		is=true;	
 		for(int i = 0; i<6; i++) {
 			this.pile[i]=c[i];

@@ -18,7 +18,7 @@ public abstract class Pile {
 		pile=new Card[52];
 	}
 	public int size;
-	abstract void initialSetup(Card[] c);
+	abstract void initialSetup(Deck d, Card[] c);
 	abstract boolean add(Card c);
 	abstract boolean remove();
 

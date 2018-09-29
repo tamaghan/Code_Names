@@ -16,7 +16,7 @@ public class GolfHomecellPile extends Pile {
 //	}
 	private boolean is;
 
-	public void initialSetup(Card[] c) {
+	public void initialSetup(Deck d, Card[] c) {
 		is=true;
 	}
 	//	public Card topCard() {

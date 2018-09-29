@@ -22,8 +22,8 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 		// g.initialSetUp(); adds 5 Cards from the Deck to the method
-		g.initialSetup(c);
-		assertEquals(g.size(), 5);
+		g.initialSetup(d, c);
+		assertEquals(5, g.size());
 	}
 	/*
 	 * Tableau piles in Little Spider initially hold 6 cards
@@ -35,7 +35,7 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 		// ls.initialSetUp(); adds 6 Cards from the Deck to the method
-		ls.initialSetup(c);
+		ls.initialSetup(d, c);
 		assertEquals(ls.size(), 6);
 	}
 	/*
@@ -49,7 +49,7 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 //		Will have to be able to call add during initial setup, but not allow cards to be added afterward
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");

@@ -17,7 +17,7 @@ public class Stock extends Pile{
 	private boolean is;
 	
 	@Override
-	public void initialSetup(Card[] c) {
+	public void initialSetup(Deck d, Card[] c) {
 		is=true;
 		for(int i=0; i<17; i++) {
 			this.pile[i]=c[i+35];

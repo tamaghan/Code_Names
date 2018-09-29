@@ -11,6 +11,7 @@ import Deck.Deck;
  */
 
 public class GolfTP extends Pile{
+	
 
 	private boolean is;
 //	public GolfTP() {
@@ -18,11 +19,13 @@ public class GolfTP extends Pile{
 //	}
 	
 	@Override
-	public void initialSetup(Card[] c) {
+	public void initialSetup(Deck d, Card[] c) {
 		is=true;
+		int size = d.deckSize;
 		for(int i = 0; i<5; i++) {
-			this.pile[i]=c[i];
-			size=size+1;
+			this.pile[i]=c[size-1-i];
+			this.size=this.size+1;
+			d.deckSize=d.deckSize-1;
 		}
 	}
 

@@ -25,7 +25,7 @@ public class HomecellPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 		// g.initialSetUp(); adds  Cards from the Deck to the method
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		assertEquals(g.size(), 0);
 	}
 	
@@ -39,7 +39,7 @@ public class HomecellPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 		// ls.initialSetUp(); adds 1 Cards from the Deck to the method
-		ls.initialSetup(c);
+		ls.initialSetup(d, c);
 		assertEquals(ls.size(), 1);
 	}
 	
@@ -60,7 +60,7 @@ public class HomecellPileTests {
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
 		//Will have to be able to call add during initial setup, but not allow cards to be added afterward
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");
@@ -113,7 +113,7 @@ public class HomecellPileTests {
 		GolfHomecellPile g = new GolfHomecellPile();
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
-		g.initialSetup(c);
+		g.initialSetup(d, c);
 		assertFalse(g.remove());
 	}
 	
@@ -131,7 +131,7 @@ public class HomecellPileTests {
 		Card threeOfHearts = new Card(3, "Hearts");
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
-		ls.initialSetup(c);
+		ls.initialSetup(d, c);
 		assertFalse(ls.remove());
 		ls.addForTesting(0, aceOfSpades);
 		ls.addForTesting(1, twoOfDiamonds);
