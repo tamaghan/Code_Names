@@ -59,7 +59,6 @@ public class HomecellPileTests {
 		GolfTP g4 = new GolfTP();
 		Deck d = new Deck();
 		Card[] c = d.cardDeck;
-		//Will have to be able to call add during initial setup, but not allow cards to be added afterward
 		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
