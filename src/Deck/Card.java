@@ -17,11 +17,13 @@ public class Card {
 	}
 	
 	// Sets rank, empty
-	public void setRank() {
+	public void setRank(int rank) {
+		this.rank=rank;
 	}
 	
 	// Sets suit, empty
-	public void setSuit() {
+	public void setSuit(String suit) {
+		this.suit=suit;
 	}
 	
 	// Returns the card's rank
