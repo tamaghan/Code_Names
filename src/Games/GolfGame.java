@@ -1,4 +1,5 @@
 package Games;
+import Deck.Deck;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
 import pile.Stock;
@@ -10,6 +11,8 @@ import pile.Stock;
  * 
  */
 
+
+
 public class GolfGame {
 	private GolfTP tp1;
 	private GolfTP tp2;
@@ -20,5 +23,25 @@ public class GolfGame {
 	private GolfTP tp7;
 	private GolfHomecellPile home;
 	private Stock stock;
+	private Deck deck;
+	
+	public GolfGame() {
+		deck = new Deck();
+		tp1 = new GolfTP();
+		tp2 = new GolfTP();
+		tp3 = new GolfTP();
+		tp4 = new GolfTP();
+		tp5 = new GolfTP();
+		tp6 = new GolfTP();
+		tp7 = new GolfTP();
+		home = new GolfHomecellPile();
+		stock = new Stock();
+		int rand=3+(int)(Math.random()*3);
+		int i=0;
+		while(i<rand) {
+			deck.shuffle();
+			i++;
+		}
+	}
 	
 }

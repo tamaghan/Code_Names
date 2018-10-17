@@ -59,6 +59,48 @@ public class Deck {
 	public void setCardDeck(Card[] cardDeck) {
 		this.cardDeck = cardDeck;
 	}
+	public Card[] cutDeck() {
+		Card[] firstHalf = new Card[26];
+		Card[] secondHalf = new Card[26];
+		int cut = 13+ (int)(Math.random()*25);
+		for(int i=0; i<cut; i++) {
+			firstHalf[i]=this.getCardDeck()[i];
+			this.getCardDeck()[i]=null;
+		}
+		for(int i=0; i<cut; i++) {
+			secondHalf[i]=this.getCardDeck()[i+26];
+			this.getCardDeck()[i+26]=null;
+		}
+		for(int i=0; i<cut; i++) {
+			this.getCardDeck()[i]=secondHalf[i];
+		}
+		for(int i=0; i<cut; i++) {
+			this.getCardDeck()[i+cut]=firstHalf[i];
+		}
+		
+		return this.cardDeck;
+	}
+	public void shuffle() {
+		Card[] firstHalf = new Card[26];
+		Card[] secondHalf = new Card[26];
+		int halfDeck = 26;
+		this.setCardDeck(this.cutDeck());
+		for(int i=0; i<halfDeck; i++) {
+			firstHalf[i]=this.getCardDeck()[i];
+			this.getCardDeck()[i]=null;
+		}
+		for(int i=0; i<halfDeck; i++) {
+			secondHalf[i]=this.getCardDeck()[i+26];
+			this.getCardDeck()[i+26]=null;
+		}
+		for(int i=0; i<52; i+=2) {
+			this.getCardDeck()[i]=secondHalf[i];
+			this.getCardDeck()[i+1]=firstHalf[i];
+			this.setCardDeck(this.cutDeck());
+		}
+		
+	}
+	
 
 }
 

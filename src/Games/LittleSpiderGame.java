@@ -1,4 +1,5 @@
 package Games;
+import Deck.Deck;
 import pile.LittleSpiderTP;
 
 import pile.SpiderHomecellPile;
@@ -11,7 +12,6 @@ import pile.SpiderHomecellPile;
 
 
 public class LittleSpiderGame {
-
 	private LittleSpiderTP tp1;
 	private LittleSpiderTP tp2;
 	private LittleSpiderTP tp3;
@@ -24,5 +24,30 @@ public class LittleSpiderGame {
 	private SpiderHomecellPile home2;
 	private SpiderHomecellPile home3;
 	private SpiderHomecellPile home4;
+	private Deck deck;
+	
+
+	public LittleSpiderGame() {
+		deck= new Deck();
+		tp1 = new LittleSpiderTP();
+		tp2 = new LittleSpiderTP();
+		tp3 = new LittleSpiderTP();
+		tp4 = new LittleSpiderTP();
+		tp5 = new LittleSpiderTP();
+		tp6 = new LittleSpiderTP();
+		tp7 = new LittleSpiderTP();
+		tp8 = new LittleSpiderTP();
+		home1 = new SpiderHomecellPile();
+		home2 = new SpiderHomecellPile();
+		home3 = new SpiderHomecellPile();
+		home4 = new SpiderHomecellPile();
+		int rand=3+(int)(Math.random()*3);
+		int i=0;
+		while(i<rand) {
+			deck.shuffle();
+			
+			i++;
+		}
+	}
 
 }
