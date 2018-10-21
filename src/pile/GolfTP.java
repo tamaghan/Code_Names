@@ -14,9 +14,7 @@ public class GolfTP extends Pile{
 	
 
 	private boolean is;
-//	public GolfTP() {
-//		pile = new Card[52];
-//	}
+
 	
 	@Override
 	public void initialSetup(Deck d, Card[] c) {
@@ -49,9 +47,7 @@ public class GolfTP extends Pile{
 		this.setSize(size()-1);
 		return true;
 	}
-	public Card topCard() {
-		return super.topCard();
-	}
+
 	
 	
 }

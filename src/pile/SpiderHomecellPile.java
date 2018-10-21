@@ -43,34 +43,8 @@ public class SpiderHomecellPile extends Pile {
 			d.setDeckSize(d.getDeckSize()-1);
 			hpCount+=1;
 		}
-	}
-	
-//	public void initialSetup(Deck d,Card[] c) {
-//		is=true;
-//		if(d.getDeckSize()==52) {
-//			this.getPile()[0]= new Card(1,"Diamonds");
-//			this.setSize(this.size()+1);
-//			d.setDeckSize(d.getDeckSize()-1);
-//		}else if(d.getDeckSize()==51) {
-//			this.getPile()[0]= new Card(1,"Hearts");
-//			this.setSize(this.size()+1);
-//			d.setDeckSize(d.getDeckSize()-1);
-//		}else if(d.getDeckSize()==50) {
-//			this.getPile()[0]= new Card(13,"Clubs");
-//			this.setSize(this.size()+1);
-//			d.setDeckSize(d.getDeckSize()-1);
-//		}else if(d.getDeckSize()==49) {
-//			this.getPile()[0]= new Card(13,"Spades");
-//			this.setSize(this.size()+1);
-//			d.setDeckSize(d.getDeckSize()-1);
-//		} 
-//		for(int i=0; i<d.getDeckSize(); i++) {
-//			if(c[i]==this.getPile()[0]) {
-//				
-//			}
-//		}
-//	
-//	}
+	}	
+
 	public boolean add(Card c) {
 		boolean returnVal = false;
 		if(this.topCard().getSuit()=="Hearts"&&c.getSuit()=="Hearts"&&this.topCard().getRank()==c.getRank()-1) {

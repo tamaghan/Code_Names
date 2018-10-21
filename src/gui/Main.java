@@ -18,7 +18,7 @@ public class Main {
 	
 	
 		JFrame frame = new JFrame("404 Name Not Found");
-		frame.setSize(600, 400);
+		frame.setSize(1500, 850);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	    GUI gui = new GUI();
 	    MenuListener action = new MenuListener();

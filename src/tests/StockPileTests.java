@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import Deck.Card;
 import Deck.Deck;
+import Games.GolfGame;
 import pile.GolfTP;
 import pile.Stock;
 
@@ -17,11 +18,13 @@ public class StockPileTests {
 	 */
 	@Test
 	public void testInitialStock() {
-		Stock g = new Stock();
-		Deck d = new Deck();
-		Card[] c = d.getCardDeck();
-		g.initialSetup(d, c);
-		assertEquals(g.size(), 17);
+//		Stock g = new Stock();
+//		Deck d = new Deck();
+//		Card[] c = d.getCardDeck();
+//		g.initialSetup(d, c);
+//		assertEquals(g.size(), 17);
+		GolfGame gg = new GolfGame();
+		assertEquals(gg.getStock().size(), 17);
 	}
 	/*
 	 * Golf stock pile correctly returns if adding a specific card 

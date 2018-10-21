@@ -51,7 +51,6 @@ public class LittleSpiderGame {
 		home4 = new SpiderHomecellPile();
 		home4.setSize(1);
 		home1.initialSetup(deck, home4.getPile());
-
 		
 		int rand=3+(int)(Math.random()*3);
 		int i=0;
@@ -59,6 +58,22 @@ public class LittleSpiderGame {
 			deck.shuffle();
 			i++;
 		}
+		tp1=new LittleSpiderTP();
+		tp1.initialSetup(deck, tp1.getPile());
+		tp2=new LittleSpiderTP();
+		tp2.initialSetup(deck, tp2.getPile());
+		tp3=new LittleSpiderTP();
+		tp3.initialSetup(deck, tp3.getPile());
+		tp4=new LittleSpiderTP();
+		tp4.initialSetup(deck, tp4.getPile());
+		tp5=new LittleSpiderTP();
+		tp5.initialSetup(deck, tp5.getPile());
+		tp6=new LittleSpiderTP();
+		tp6.initialSetup(deck, tp6.getPile());
+		tp7=new LittleSpiderTP();
+		tp7.initialSetup(deck, tp7.getPile());
+		tp8=new LittleSpiderTP();
+		tp8.initialSetup(deck, tp8.getPile());
 	}
 	public SpiderHomecellPile getHome1() {
 		return this.home1;

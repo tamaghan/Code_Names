@@ -17,9 +17,6 @@ public class LittleSpiderTP extends Pile{
 	/**
 	 * Class will define behavior of each Tableau pile in little spider game
 	 */
-//	public Card topCard() {
-//		return super.topCard();
-//	}
 	
 	@Override
 	public void initialSetup(Deck d,Card[] c) {

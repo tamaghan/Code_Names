@@ -16,15 +16,17 @@ public class Stock extends Pile{
 	
 	private boolean is;
 	
-	@Override
+//	public void initialSetup(Deck d, Card[] c) {
+//		is=true;
+//		int size = d.getDeckSize();
+//		for(int i=0; i<17; i++) {
+//			this.getPile()[i]=c[i];
+//			this.setSize(this.size()+1);
+//			
+//		}
+//	}
 	public void initialSetup(Deck d, Card[] c) {
-		is=true;
-		int size = d.getDeckSize();
-		for(int i=0; i<17; i++) {
-			this.getPile()[i]=c[i];
-			this.setSize(this.size()+1);
-		}
-		
+		c=d.getCardDeck();
 	}
 
 	@Override
@@ -41,10 +43,6 @@ public class Stock extends Pile{
 		this.getPile()[size()-1]=null;
 		this.setSize(size()-1);
 		return true;
-	}
-	public Card topCard() {
-		return super.topCard();
-	}
-	
+	}	
 
 }

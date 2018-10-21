@@ -11,17 +11,11 @@ import Deck.Deck;
 
 public class GolfHomecellPile extends Pile {
 
-//	public GolfHomecellPile() {
-//		pile = new Card[52];
-//	}
 	private boolean is;
 
 	public void initialSetup(Deck d, Card[] c) {
 		is=true;
 	}
-	//	public Card topCard() {
-	//		return super.topCard();
-	//	}
 
 	public boolean add(Card c) {
 		boolean returnVal=false; 
