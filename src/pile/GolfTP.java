@@ -21,11 +21,11 @@ public class GolfTP extends Pile{
 	@Override
 	public void initialSetup(Deck d, Card[] c) {
 		is=true;
-		int size = d.deckSize;
+		int size = d.getDeckSize();
 		for(int i = 0; i<5; i++) {
-			this.pile[i]=c[size-1-i];
-			this.size=this.size+1;
-			d.deckSize=d.deckSize-1;  
+			this.getPile()[i]=c[size-1-i];
+			this.setSize(this.size()+1);
+			d.setDeckSize(d.getDeckSize()-1);  
 		}
 	}
 
@@ -33,8 +33,8 @@ public class GolfTP extends Pile{
 	public boolean add(Card c) {
 		boolean returnVal = false;
 		if(!is) {
-			pile[size()]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			return true;
 		}
 		return returnVal;
@@ -45,8 +45,8 @@ public class GolfTP extends Pile{
 		if(size()==0) {
 			return false;
 		}
-		pile[size()-1]=null;
-		size=size-1;
+		this.getPile()[size()-1]=null;
+		this.setSize(size()-1);
 		return true;
 	}
 	public Card topCard() {

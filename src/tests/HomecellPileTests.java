@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import Deck.Card;
 import Deck.Deck;
+import Games.LittleSpiderGame;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
 import pile.GolfHomecellPile;
@@ -23,7 +24,7 @@ public class HomecellPileTests {
 		//pile interface, implemented by GolfHomecellPile
 		GolfHomecellPile g = new GolfHomecellPile();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		// g.initialSetUp(); adds  Cards from the Deck to the method
 		g.initialSetup(d, c);
 		assertEquals(g.size(), 0);
@@ -35,12 +36,17 @@ public class HomecellPileTests {
 	@Test
 	public void testInitialLSHP() {
 		// pile interface, implemented by SpiderHomecellPile
-		SpiderHomecellPile ls = new SpiderHomecellPile();
-		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		LittleSpiderGame lsg = new LittleSpiderGame();
 		// ls.initialSetUp(); adds 1 Cards from the Deck to the method
-		ls.initialSetup(d, c);
-		assertEquals(ls.size(), 1);
+		
+		assertEquals(lsg.getHome1().topCard().getRank(), 1);
+		assertEquals(lsg.getHome1().topCard().getSuit(), "Hearts");
+		assertEquals(lsg.getHome2().topCard().getRank(), 1);
+		assertEquals(lsg.getHome2().topCard().getSuit(), "Diamonds");
+		assertEquals(lsg.getHome3().topCard().getRank(), 13);
+		assertEquals(lsg.getHome3().topCard().getSuit(), "Clubs");
+		assertEquals(lsg.getHome4().topCard().getRank(), 13);
+		assertEquals(lsg.getHome4().topCard().getSuit(), "Spades");
 	}
 	
 	/*
@@ -58,7 +64,7 @@ public class HomecellPileTests {
 		GolfHomecellPile g3 = new GolfHomecellPile();
 		GolfTP g4 = new GolfTP();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
@@ -111,7 +117,7 @@ public class HomecellPileTests {
 	public void testGolfHomecellPileRemove() {
 		GolfHomecellPile g = new GolfHomecellPile();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		g.initialSetup(d, c);
 		assertFalse(g.remove());
 	}
@@ -129,7 +135,7 @@ public class HomecellPileTests {
 		Card twoOfDiamonds = new Card(2, "Diamonds");
 		Card threeOfHearts = new Card(3, "Hearts");
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		ls.initialSetup(d, c);
 		assertFalse(ls.remove());
 		ls.addForTesting(0, aceOfSpades);

@@ -24,11 +24,11 @@ public class LittleSpiderTP extends Pile{
 	@Override
 	public void initialSetup(Deck d,Card[] c) {
 		is=true;
-		int size = d.deckSize;
+		int size = d.getDeckSize();
 		for(int i = 0; i<6; i++) {
-			this.pile[i]=c[size-1-i];
-			this.size=this.size+1;
-			d.deckSize=d.deckSize-1; 
+			this.getPile()[i]=c[size-1-i];
+			this.setSize(this.size()+1);
+			d.setDeckSize(d.getDeckSize()-1); 
 		}
 	}
 
@@ -36,16 +36,16 @@ public class LittleSpiderTP extends Pile{
 	public boolean add(Card c) {
 		boolean returnVal=false; 
 		if(this.topCard().getRank()==c.getRank()+1||this.topCard().getRank()==c.getRank()-1) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}else if(this.topCard().getRank()==13&&c.getRank()==1) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}else if(this.topCard().getRank()==1&&c.getRank()==13) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}
 		return returnVal;
@@ -56,8 +56,8 @@ public class LittleSpiderTP extends Pile{
 		if(size()==0) {
 			return false;
 		}
-		pile[size()-1]=null;
-		size=size-1;
+		this.getPile()[size()-1]=null;
+		this.setSize(size()-1);
 		return true;
 		
 	}

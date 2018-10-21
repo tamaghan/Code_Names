@@ -20,7 +20,7 @@ public class TableauPileTests {
 		//pile interface, implemented by GolfTP
 		GolfTP g = new GolfTP();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		// g.initialSetUp(); adds 5 Cards from the Deck to the method
 		g.initialSetup(d, c);
 		assertEquals(5, g.size());
@@ -33,7 +33,7 @@ public class TableauPileTests {
 		// pile interface, implemented by LittleSpiderTP
 		LittleSpiderTP ls = new LittleSpiderTP();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		// ls.initialSetUp(); adds 6 Cards from the Deck to the method
 		ls.initialSetup(d, c);
 		assertEquals(ls.size(), 6);
@@ -47,7 +47,7 @@ public class TableauPileTests {
 	public void testGolfTPAdd() {
 		GolfTP g = new GolfTP();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 //		Will have to be able to call add during initial setup, but not allow cards to be added afterward
 		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spades");

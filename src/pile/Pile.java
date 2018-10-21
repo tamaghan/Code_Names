@@ -12,12 +12,17 @@ import Deck.Deck;
  *
  */
 public abstract class Pile {
-	public Card[] pile;
-	
+	private Card[] pile;
+	private int size;
 	public Pile() {
 		pile=new Card[52];
 	}
-	public int size;
+	
+	public void setSize(int size) {
+		this.size=size;
+	}
+	
+	
 	abstract void initialSetup(Deck d, Card[] c);
 	abstract boolean add(Card c);
 	abstract boolean remove();

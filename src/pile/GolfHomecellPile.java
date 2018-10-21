@@ -26,16 +26,16 @@ public class GolfHomecellPile extends Pile {
 	public boolean add(Card c) {
 		boolean returnVal=false; 
 		if(this.topCard().getRank()==c.getRank()+1||this.topCard().getRank()==c.getRank()-1) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[this.size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}else if(this.topCard().getRank()==13&&c.getRank()==1) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}else if(this.topCard().getRank()==1&&c.getRank()==13) {
-			pile[size]=c;
-			size=size+1;
+			this.getPile()[size()]=c;
+			this.setSize(size()+1);
 			returnVal=true;
 		}
 		return returnVal;

@@ -19,7 +19,7 @@ public class StockPileTests {
 	public void testInitialStock() {
 		Stock g = new Stock();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		g.initialSetup(d, c);
 		assertEquals(g.size(), 17);
 	}
@@ -32,7 +32,7 @@ public class StockPileTests {
 	public void testAddStock() {
 		Stock g = new Stock();
 		Deck d = new Deck();
-		Card[] c = d.cardDeck;
+		Card[] c = d.getCardDeck();
 		g.initialSetup(d, c);
 		Card aceOfSpades = new Card(1, "Spade");
 		Card eightOfHearts = new Card(8, "Heart");
@@ -80,7 +80,7 @@ public class StockPileTests {
 		g.remove();
 		int sz2 = g.size();
 		assertEquals(sz2, sz1-1);
-		assertEquals(twoOfDiamonds, g.pile[sz2-1]);
+		assertEquals(twoOfDiamonds, g.getPile()[sz2-1]);
 	}
 	
 }

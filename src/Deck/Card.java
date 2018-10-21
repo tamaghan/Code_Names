@@ -8,6 +8,7 @@ public class Card {
 	// Creates an int and string instance
 	private int rank;
 	private String suit;
+	private String gifFile;
 	
 	// Constructor for this class, two params rank, suit.
 	public Card (int rank, String suit) {
@@ -43,5 +44,13 @@ public class Card {
 	
 	public void testReturn() {
 		System.out.println("My rank is " + rank + ". My suit is " + suit);
+	}
+
+	public String getGifFile() {
+		return gifFile;
+	}
+
+	public void setGifFile(String gifFile) {
+		this.gifFile = gifFile;
 	}
 }

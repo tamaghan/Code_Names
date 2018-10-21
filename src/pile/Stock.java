@@ -4,9 +4,9 @@ import Deck.Card;
 import Deck.Deck;
 
 /**
- * The stock pile contains the 
+ * The stock this.getPile() contains the 
  * cards that have not been dealt. Each game has its own 
- * rules for how cards are dealt from the stock pile.
+ * rules for how cards are dealt from the stock this.getPile().
  * @author tamaghan , dandrijje, fmdestin, 
  *
  */
@@ -19,10 +19,10 @@ public class Stock extends Pile{
 	@Override
 	public void initialSetup(Deck d, Card[] c) {
 		is=true;
-		int size = d.deckSize;
+		int size = d.getDeckSize();
 		for(int i=0; i<17; i++) {
-			this.pile[i]=c[i];
-			this.size=this.size+1;
+			this.getPile()[i]=c[i];
+			this.setSize(this.size()+1);
 		}
 		
 	}
@@ -38,8 +38,8 @@ public class Stock extends Pile{
 		if(size()==0) {
 			return false;
 		}else
-		pile[size()-1]=null;
-		size=size-1;
+		this.getPile()[size()-1]=null;
+		this.setSize(size()-1);
 		return true;
 	}
 	public Card topCard() {

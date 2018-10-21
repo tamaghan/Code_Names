@@ -1,4 +1,4 @@
-
+package gui;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -32,20 +32,17 @@ public class SelectingCardsListener extends JFrame implements ActionListener
         retVal.setMinimumSize(d);	
         return retVal;
       }
-    public static void select(JLabel label) 
-    {
+    public static void select(JLabel label) {
         label.setBorder(SELECTED_BORDER);
         label.repaint();
       }
     
-    public static void unselect() 
-    {
+    public static void unselect() {
         label.setBorder(UNSELECTED_BORDER);
         label.repaint();
     }
 	@Override
-	public void actionPerformed(ActionEvent e) 
-	{
+	public void actionPerformed(ActionEvent e) {
 		
 	}
 

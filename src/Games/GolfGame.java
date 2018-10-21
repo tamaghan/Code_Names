@@ -11,8 +11,6 @@ import pile.Stock;
  * 
  */
 
-
-
 public class GolfGame {
 	private GolfTP tp1;
 	private GolfTP tp2;
