@@ -114,9 +114,11 @@ public class Deck {
 		this.cardDeck = cardDeck;
 	}
 	public Card[] cutDeck() {
-		Card[] firstHalf = new Card[52];
-		Card[] secondHalf = new Card[52];
 		int cut = 13+ (int)(Math.random()*25);
+		int cut2 = 52-cut;
+		
+		Card[] firstHalf = new Card[cut];
+		Card[] secondHalf = new Card[cut2];
 		for(int i=0; i<cut; i++) {
 			firstHalf[i]=this.getCardDeck()[i];
 			this.getCardDeck()[i]=null;
