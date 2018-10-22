@@ -6,11 +6,22 @@ import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
 
+import Games.Game;
+
 public class MenuListener extends JFrame implements ActionListener{
 
-	private JMenuItem golf = new JMenuItem("Golf");
-	private JMenuItem ls = new JMenuItem("Little Spider");
-	private JMenuItem exit = new JMenuItem("Exit");
+	private JMenuItem golf;
+	private JMenuItem ls;
+	private JMenuItem exit;
+	private GUI gui;
+	private JFrame frame;
+	
+	public MenuListener(JFrame frame) {
+		golf = new JMenuItem("Golf");
+		ls = new JMenuItem("Little Spider");
+		exit = new JMenuItem("Exit");
+		this.frame=frame;
+	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource().equals(exit)) {

@@ -24,8 +24,8 @@ public abstract class Pile {
 	
 	
 	abstract void initialSetup(Deck d, Card[] c);
-	abstract boolean add(Card c);
-	abstract boolean remove();
+	public abstract boolean add(Card c);
+	public abstract boolean remove();
 
 	public Card topCard() {
 		return pile[this.size()-1];
@@ -38,13 +38,6 @@ public abstract class Pile {
 	}
 	public int size() {
 		return size;
-		//		int returnVal=0;
-		//		for(int i = 0; i<pile.length ; i++) {
-		//			if(pile[i]!=null) {
-		//				returnVal= returnVal+1;
-		//			}
-		//		}
-		//		return returnVal;
 
 	}
 	public void addForTesting(int i, Card c) {

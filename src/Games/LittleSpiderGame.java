@@ -1,7 +1,7 @@
 package Games;
 import Deck.Deck;
 import pile.LittleSpiderTP;
-
+import pile.Pile;
 import pile.SpiderHomecellPile;
 
 /**
@@ -11,7 +11,7 @@ import pile.SpiderHomecellPile;
  */
 
 
-public class LittleSpiderGame {
+public class LittleSpiderGame extends Game{
 	private LittleSpiderTP tp1;
 	private LittleSpiderTP tp2;
 	private LittleSpiderTP tp3;
@@ -150,5 +150,6 @@ public class LittleSpiderGame {
 	public Deck getDeck() {
 		return this.deck;
 	}
+	
 
 }

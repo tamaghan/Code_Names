@@ -20,8 +20,8 @@ public class Main {
 		JFrame frame = new JFrame("404 Name Not Found");
 		frame.setSize(1500, 850);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    GUI gui = new GUI();
-	    MenuListener action = new MenuListener();
+//	    GUI gui = new GUI();
+	    MenuListener action = new MenuListener(frame);
 	    JMenuBar bar = new JMenuBar(); 
 		JMenu menu = new JMenu("New Game");
 		JMenuItem golf = new JMenuItem("Golf");

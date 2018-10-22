@@ -11,7 +11,7 @@ import pile.Stock;
  * 
  */
 
-public class GolfGame {
+public class GolfGame extends Game{
 	private GolfTP tp1;
 	private GolfTP tp2;
 	private GolfTP tp3;
@@ -111,5 +111,6 @@ public class GolfGame {
 		stock.initialSetup(deck, stock.getPile());
 		stock.setSize(deck.getDeckSize());
 	}
+	
 	
 }
