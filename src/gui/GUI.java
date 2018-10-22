@@ -17,18 +17,18 @@ public class GUI {
 	private Pile ogPile;
 	private Pile newPile;
 	private JPanel gamePanel;
-	public GUI(Game g) {
-		this.g=g;
-	}
+//	public GUI() {
+//		this.g=g;
+//	}
 	/**
 	 * method should be generic to game type. 
 	 * Must ensure top card is updated and being displayed 
 	 * for each pile
 	 */
 	public void update() {
-		newPile.addForTesting(newPile.size(), ogPile.topCard());
-		ogPile.getPile()[ogPile.size()-1]=null;
-		ogPile.setSize(ogPile.size()-1);
+//		newPile.addForTesting(newPile.size(), ogPile.topCard());
+//		ogPile.getPile()[ogPile.size()-1]=null;
+//		ogPile.setSize(ogPile.size()-1);
 		
 	}
 	public JLabel err() {

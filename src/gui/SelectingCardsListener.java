@@ -10,14 +10,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
 
-public class SelectingCardsListener extends JFrame implements ActionListener
-{
+public class SelectingCardsListener extends JFrame implements ActionListener{
+	
 	private static final Border UNSELECTED_BORDER = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     private static final Border SELECTED_BORDER = BorderFactory.createMatteBorder(5, 5, 5, 5,Color.BLACK);
 	private String path;
 	private static JLabel label = new JLabel();
     
-    private JLabel createDisplayImage(String fileNameRelativeToClassFile) {
+    public JLabel createDisplayImage(String fileNameRelativeToClassFile) {
         JLabel retVal = new JLabel();
         java.net.URL imgURL = this.getClass().getResource(fileNameRelativeToClassFile);
         if (imgURL == null) {

@@ -30,7 +30,7 @@ public class MenuListener extends JFrame implements ActionListener{
 		if(arg0.getSource().equals(golf)) {
 			
 		}
-		if(arg0.getSource().equals(golf)) {
+		if(arg0.getSource().equals(ls)) {
 			
 		}
 		
