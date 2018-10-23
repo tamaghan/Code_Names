@@ -17,15 +17,25 @@ public class GolfTP extends Pile{
 
 	
 	@Override
-	public void initialSetup(Deck d, Card[] c) {
+	public void initialSetup(Deck d, Pile p) {
 		is=true;
-		int size = d.getDeckSize();
-		for(int i = 0; i<5; i++) {
-			this.getPile()[i]=c[size-1-i];
-			this.setSize(this.size()+1);
-			d.setDeckSize(d.getDeckSize()-1);  
+		for(int i=0; i<5; i++) {
+			p.addForTesting(i, d.getCardDeck()[d.getDeckSize()-1]);
+			d.setDeckSize(d.getDeckSize()-1);
+			d.getCardDeck()[d.getDeckSize()]=null;
 		}
 	}
+//	@Override
+//	public void initialSetup(Deck d, Pile p) {
+//		is=true;
+//		for(int i=0; i<5; i++) {
+//			p.getPile()[i]=d.getCardDeck()[d.getDeckSize()-1];
+//			d.setDeckSize(d.getDeckSize()-1);
+//			d.getCardDeck()[d.getDeckSize()]=null;
+//			p.setSize(p.size()+1);
+//		}
+//	}
+
 
 	@Override
 	public boolean add(Card c) {

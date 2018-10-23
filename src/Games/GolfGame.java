@@ -22,6 +22,36 @@ public class GolfGame extends Game{
 	private GolfHomecellPile home;
 	private Stock stock;
 	private Deck deck;
+	
+	public GolfGame() {
+		deck = new Deck();
+		int rand=3+(int)(Math.random()*3);
+		int i=0;
+		while(i<rand) {
+			deck.shuffle();
+			i++;
+		}
+		tp1 = new GolfTP();
+		tp1.initialSetup(deck, tp1);
+		tp2 = new GolfTP();
+		tp2.initialSetup(deck, tp2);
+		tp3 = new GolfTP();
+		tp3.initialSetup(deck, tp3);
+		tp4 = new GolfTP();
+		tp4.initialSetup(deck, tp4);
+		tp5 = new GolfTP();
+		tp5.initialSetup(deck, tp5);
+		tp6 = new GolfTP();
+		tp6.initialSetup(deck, tp6);
+		tp7 = new GolfTP();
+		tp7.initialSetup(deck, tp7);
+		home = new GolfHomecellPile();
+		home.initialSetup(deck, home);
+		stock = new Stock();
+		stock.initialSetup(deck, stock);
+		
+	}
+	
 	public GolfTP getTp1() {
 		return tp1;
 	}
@@ -83,34 +113,7 @@ public class GolfGame extends Game{
 		this.deck = deck;
 	}
 	
-	public GolfGame() {
-		deck = new Deck();
-		int rand=3+(int)(Math.random()*3);
-		int i=0;
-		while(i<rand) {
-			deck.shuffle();
-			i++;
-		}
-		tp1 = new GolfTP();
-		tp1.initialSetup(deck, tp1.getPile());
-		tp2 = new GolfTP();
-		tp2.initialSetup(deck, tp2.getPile());
-		tp3 = new GolfTP();
-		tp3.initialSetup(deck, tp3.getPile());
-		tp4 = new GolfTP();
-		tp4.initialSetup(deck, tp4.getPile());
-		tp5 = new GolfTP();
-		tp5.initialSetup(deck, tp5.getPile());
-		tp6 = new GolfTP();
-		tp6.initialSetup(deck, tp6.getPile());
-		tp7 = new GolfTP();
-		tp7.initialSetup(deck, tp7.getPile());
-		home = new GolfHomecellPile();
-		home.initialSetup(deck, home.getPile());
-		stock = new Stock();
-		stock.initialSetup(deck, stock.getPile());
-		stock.setSize(deck.getDeckSize());
-	}
+	
 	
 	
 }

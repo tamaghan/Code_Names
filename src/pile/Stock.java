@@ -16,17 +16,12 @@ public class Stock extends Pile{
 	
 	private boolean is;
 	
-//	public void initialSetup(Deck d, Card[] c) {
-//		is=true;
-//		int size = d.getDeckSize();
-//		for(int i=0; i<17; i++) {
-//			this.getPile()[i]=c[i];
-//			this.setSize(this.size()+1);
-//			
-//		}
-//	}
-	public void initialSetup(Deck d, Card[] c) {
-		c=d.getCardDeck();
+	public void initialSetup(Deck d, Pile p) {
+		int deckSize = d.getDeckSize();
+		for(int i=0; i< deckSize; i++) {
+			p.getPile()[i]=d.getCardDeck()[i];
+			p.setSize(p.size()+1);
+		}
 	}
 
 	@Override

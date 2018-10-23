@@ -21,7 +21,7 @@ public class SelectingCardsListener extends JFrame implements ActionListener{
         JLabel retVal = new JLabel();
         java.net.URL imgURL = this.getClass().getResource(fileNameRelativeToClassFile);
         if (imgURL == null) {
-          throw new IllegalArgumentException("Couldn't find file: " + path);
+          throw new IllegalArgumentException("Couldn't find file: " + fileNameRelativeToClassFile);
         }
         ImageIcon cardImage = new ImageIcon(imgURL);    
         retVal.setIcon(cardImage);

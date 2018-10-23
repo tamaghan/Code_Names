@@ -15,32 +15,36 @@ public class SpiderHomecellPile extends Pile {
 	private int hpCount;
 	
 	
-	public void initialSetup(Deck d, Card[] c) {
+	public void initialSetup(Deck d, Pile p) {
+		p.setSize(0);
 		is=true;
 		if(hpCount==0) {
-			c[0]=d.getCardDeck()[26];
+			p.getPile()[0]=d.getCardDeck()[26];
 			d.getCardDeck()[26]=d.getCardDeck()[d.getDeckSize()-1];
 			d.getCardDeck()[d.getDeckSize()-1]=null; 
 			d.setDeckSize(d.getDeckSize()-1);
-			this.setSize(this.size()+1);
+			p.setSize(p.size()+1);
 			hpCount+=1;
 		}else if(hpCount==1) {
-			c[0]=d.getCardDeck()[13];
+			p.getPile()[0]=d.getCardDeck()[13];
 			d.getCardDeck()[13]=d.getCardDeck()[d.getDeckSize()-1];
 			d.getCardDeck()[d.getDeckSize()-1]=null; 
 			d.setDeckSize(d.getDeckSize()-1);
+			p.setSize(p.size()+1);
 			hpCount+=1;
 		}else if(hpCount==2) {
-			c[0]=d.getCardDeck()[12];
+			p.getPile()[0]=d.getCardDeck()[12];
 			d.getCardDeck()[12]=d.getCardDeck()[d.getDeckSize()-1];
 			d.getCardDeck()[d.getDeckSize()-1]=null; 
 			d.setDeckSize(d.getDeckSize()-1);
+			p.setSize(p.size()+1);
 			hpCount+=1;
 		}else if(hpCount==3) {
-			c[0]=d.getCardDeck()[26];
+			p.getPile()[0]=d.getCardDeck()[26];
 			d.getCardDeck()[26]=d.getCardDeck()[d.getDeckSize()-1];
 			d.getCardDeck()[d.getDeckSize()-1]=null; 
 			d.setDeckSize(d.getDeckSize()-1);
+			p.setSize(p.size()+1);
 			hpCount+=1;
 		}
 	}	

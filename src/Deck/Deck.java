@@ -24,71 +24,77 @@ public class Deck {
 		
 		// Creates 'club' suit (Black)
 		for (int i = 0; i<13; i++) {
+			int j=i+1;
 			cardDeck[i] = new Card(1+i,"Clubs");
 			if(i==0) {
-				cardDeck[i].setGifFile("a"+"c.gif");
+				cardDeck[i].setGifFile("/PictureFolder/ac.gif");
 			}else if(0<i&&i<10) {
-				cardDeck[i].setGifFile(i+1+"c.gif");
+				cardDeck[i].setGifFile("/PictureFolder/"+j+"c.gif");
 			}else if(i==10) {
-				cardDeck[i].setGifFile("j"+"c.gif");
+				cardDeck[i].setGifFile("/PictureFolder/jc.gif");
 			}else if(i==11) {
-				cardDeck[i].setGifFile("q"+"c.gif");
+				cardDeck[i].setGifFile("/PictureFolder/qc.gif");
 			}
 			else if(i==12) {
-				cardDeck[i].setGifFile("k"+"c.gif");
+				cardDeck[i].setGifFile("/PictureFolder/kc.gif");
 			}
 			
 		}
 		
 		// Creates 'Diamonds' suit (Red)
 		for (int i = 13; i<26; i++) {
+			int j=i-12;
 			cardDeck[i] = new Card(i-12,"Diamonds");
-			if(i==0) {
-				cardDeck[i].setGifFile("a"+"d.gif");
-			}else if(0<i&&i<10) {
-				cardDeck[i].setGifFile(i+1+"d.gif");
-			}else if(i==10) {
-				cardDeck[i].setGifFile("j"+"d.gif");
-			}else if(i==11) {
-				cardDeck[i].setGifFile("q"+"d.gif");
+			if(i==13) {
+				cardDeck[i].setGifFile("/PictureFolder/ad.gif");
+			}else if(13<i&&i<23) {
+				cardDeck[i].setGifFile("/PictureFolder/"+j+"d.gif");
+			}else if(i==23) {
+				cardDeck[i].setGifFile("/PictureFolder/jd.gif");
+			}else if(i==24) {
+				cardDeck[i].setGifFile("/PictureFolder/qd.gif");
 			}
-			else if(i==12) {
-				cardDeck[i].setGifFile("k"+"d.gif");
+			else if(i==25) {
+				cardDeck[i].setGifFile("/PictureFolder/kd.gif");
 			}
 		}
 		
 		// Creates 'Hearts' suit (Red)
 		for (int i = 26; i<39; i++) {
+			int j=i-25;
 			cardDeck[i] = new Card(i-25,"Hearts");
-			if(i==0) {
-				cardDeck[i].setGifFile("a"+"h.gif");
-			}else if(0<i&&i<10) {
-				cardDeck[i].setGifFile(i+1+"h.gif");
-			}else if(i==10) {
-				cardDeck[i].setGifFile("j"+"h.gif");
-			}else if(i==11) {
-				cardDeck[i].setGifFile("q"+"h.gif");
+			if(i==26) {
+				cardDeck[i].setGifFile("/PictureFolder/ah.gif");
+			}else if(26<i&&i<36) {
+				cardDeck[i].setGifFile("/PictureFolder/"+j+"h.gif");
+			}else if(i==36) {
+				cardDeck[i].setGifFile("/PictureFolder/jh.gif");
+			}else if(i==37) {
+				cardDeck[i].setGifFile("/PictureFolder/qh.gif");
 			}
-			else if(i==12) {
-				cardDeck[i].setGifFile("k"+"h.gif");
+			else if(i==38) {
+				cardDeck[i].setGifFile("/PictureFolder/kh.gif");
 			}
+			j++;
 		}
 		
 		// Creates 'Spades' suit (Black)
 		for (int i = 39; i<52; i++) {
+			int j=i-38;
 			cardDeck[i] = new Card(i-38,"Spades");
-			if(i==0) {
-				cardDeck[i].setGifFile("a"+"s.gif");
-			}else if(0<i&&i<10) {
-				cardDeck[i].setGifFile(i+1+"s.gif");
-			}else if(i==10) {
-				cardDeck[i].setGifFile("j"+"s.gif");
-			}else if(i==11) {
-				cardDeck[i].setGifFile("q"+"s.gif");
+			if(i==39) {
+				cardDeck[i].setGifFile("/PictureFolder/as.gif");
+			}else if(39<i&&i<49) {
+				cardDeck[i].setGifFile("/PictureFolder/"+j+"s.gif");
+			}else if(i==49) {
+				cardDeck[i].setGifFile("/PictureFolder/js.gif");
+			}else if(i==50) {
+				cardDeck[i].setGifFile("/PictureFolder/qs.gif");
 			}
-			else if(i==12) {
-				cardDeck[i].setGifFile("k"+"s.gif");
+			else if(i==51) {
+				cardDeck[i].setGifFile("/PictureFolder/ks.gif");
 			}
+			j++;
 		}
 	}
 
@@ -114,8 +120,11 @@ public class Deck {
 		this.cardDeck = cardDeck;
 	}
 	public Card[] cutDeck() {
-		int cut = 13+ (int)(Math.random()*25);
-		int cut2 = 52-cut;
+		int dSize = this.getDeckSize();
+		int halfD = dSize/2;
+		
+		int cut = 13+ (int)(Math.random()*(halfD-1));
+		int cut2 = dSize-cut;
 		
 		Card[] firstHalf = new Card[cut];
 		Card[] secondHalf = new Card[cut2];
@@ -123,41 +132,43 @@ public class Deck {
 			firstHalf[i]=this.getCardDeck()[i];
 			this.getCardDeck()[i]=null;
 		}
-		for(int i=0; i<52-cut; i++) {
+		for(int i=0; i<cut2; i++) {
 			secondHalf[i]=this.getCardDeck()[i+cut];
 			this.getCardDeck()[i+cut]=null;
 		}
-		for(int i=0; i<52-cut; i++) {
+		for(int i=0; i<cut2; i++) {
 			this.getCardDeck()[i]=secondHalf[i];
 		}
 		for(int i=0; i<cut; i++) {
-			this.getCardDeck()[i+52-cut]=firstHalf[i];
+			this.getCardDeck()[i+cut2]=firstHalf[i];
 		}
 		
 		return this.cardDeck;
 	}
-	public void shuffle() {
-		int deckSize = this.deckSize;
+	public Card[] shuffle() {
+		int j = 0;
+		int deckSize = this.getDeckSize();
 		int halfDeck = deckSize/2;
-		Card[] firstHalf = new Card[52];
-		Card[] secondHalf = new Card[52];
+		Card[] firstHalf = new Card[halfDeck];
+		Card[] secondHalf = new Card[halfDeck];
 		this.setCardDeck(this.cutDeck());
-		for(int i=0; i<halfDeck; i++) {
-			firstHalf[i]=this.getCardDeck()[i];
-			this.getCardDeck()[i]=null;
-		}
-		for(int i=0; i<halfDeck; i++) {
-			secondHalf[i]=this.getCardDeck()[i+26];
-			this.getCardDeck()[i+26]=null;
-		}
-		for(int i=0; i<deckSize; i+=2) {
-			this.getCardDeck()[i]=secondHalf[i];
-			this.getCardDeck()[i+1]=firstHalf[i];
-			this.setCardDeck(this.cutDeck());
-		}
+//		for(int i=0; i<halfDeck; i++) {
+//			firstHalf[i]=this.getCardDeck()[i];
+//			this.getCardDeck()[i]=null;
+//		}
+//		for(int i=0; i<halfDeck; i++) {
+//			secondHalf[i]=this.getCardDeck()[i+halfDeck];
+//			this.getCardDeck()[i+halfDeck]=null;
+//		}
+//		for(int i=0; i<deckSize; i+=2) {
+//			this.getCardDeck()[i]=secondHalf[j];
+//			this.getCardDeck()[i+1]=firstHalf[j];
+//			j++;
+//		}
+		return secondHalf;
 		
 	}
-	
+
 
 }
 

@@ -23,7 +23,7 @@ public abstract class Pile {
 	}
 	
 	
-	abstract void initialSetup(Deck d, Card[] c);
+	abstract void initialSetup(Deck d, Pile p);
 	public abstract boolean add(Card c);
 	public abstract boolean remove();
 

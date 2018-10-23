@@ -4,10 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.SwingUtilities;
+
+import Deck.Card;
+import Deck.Deck;
+import Games.GolfGame;
+import Games.LittleSpiderGame;
+import pile.GolfTP;
+import pile.SpiderHomecellPile;
 
 public class Main {
 	
@@ -17,10 +25,9 @@ public class Main {
 	public static void gameGUI() {
 	
 	
-		JFrame frame = new JFrame("404 Name Not Found");
-		frame.setSize(1500, 850);
+		JFrame frame = new JFrame("A8-404 Name Not Found");
+		frame.setSize(600, 400);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//	    GUI gui = new GUI();
 	    MenuListener action = new MenuListener(frame);
 	    JMenuBar bar = new JMenuBar(); 
 		JMenu menu = new JMenu("New Game");
@@ -30,6 +37,8 @@ public class Main {
 		action.setLs(ls);
 		JMenuItem exit = new JMenuItem("Exit");
 		action.setExit(exit);
+		golf.addActionListener(action);
+		ls.addActionListener(action);
 		exit.addActionListener(action);
 		menu.add(golf);
 		menu.add(ls);
@@ -47,7 +56,8 @@ public class Main {
                 gameGUI();
             }
         });
-//		new Main();
+
+		
 	}
 
 }

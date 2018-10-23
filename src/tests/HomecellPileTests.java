@@ -26,7 +26,7 @@ public class HomecellPileTests {
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
 		// g.initialSetUp(); adds  Cards from the Deck to the method
-		g.initialSetup(d, c);
+		g.initialSetup(d, g);
 		assertEquals(g.size(), 0);
 	}
 	
@@ -65,7 +65,7 @@ public class HomecellPileTests {
 		GolfTP g4 = new GolfTP();
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
-		g.initialSetup(d, c);
+		g.initialSetup(d, g);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");
@@ -118,7 +118,7 @@ public class HomecellPileTests {
 		GolfHomecellPile g = new GolfHomecellPile();
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
-		g.initialSetup(d, c);
+		g.initialSetup(d, g);
 		assertFalse(g.remove());
 	}
 	
@@ -136,7 +136,7 @@ public class HomecellPileTests {
 		Card threeOfHearts = new Card(3, "Hearts");
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
-		ls.initialSetup(d, c);
+		ls.initialSetup(d, ls);
 		assertFalse(ls.remove());
 		ls.addForTesting(0, aceOfSpades);
 		ls.addForTesting(1, twoOfDiamonds);

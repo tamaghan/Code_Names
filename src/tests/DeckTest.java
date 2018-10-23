@@ -45,7 +45,7 @@ public class DeckTest {
 		assertEquals(2,firstHalf[1].getRank());
 		//assertEquals(2,firstHalf[cut-1].getRank());
 		
-		assertEquals(2,secondHalf[cut2+1].getRank());
+		assertEquals(2,secondHalf[cut2-1].getRank());
 		//assertEquals(2,secondHalf[1].getRank());
 
 		//assertEquals(cut, cut2);

@@ -22,7 +22,7 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
 		// g.initialSetUp(); adds 5 Cards from the Deck to the method
-		g.initialSetup(d, c);
+		g.initialSetup(d, g);
 		assertEquals(5, g.size());
 	}
 	/*
@@ -35,7 +35,7 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
 		// ls.initialSetUp(); adds 6 Cards from the Deck to the method
-		ls.initialSetup(d, c);
+		ls.initialSetup(d, ls);
 		assertEquals(ls.size(), 6);
 	}
 	/*
@@ -49,7 +49,7 @@ public class TableauPileTests {
 		Deck d = new Deck();
 		Card[] c = d.getCardDeck();
 //		Will have to be able to call add during initial setup, but not allow cards to be added afterward
-		g.initialSetup(d, c);
+		g.initialSetup(d, g);
 		Card aceOfSpades = new Card(1, "Spades");
 		Card eightOfHearts = new Card(8, "Hearts");
 		Card kingOfClubs = new Card(13, "Clubs");

@@ -18,15 +18,25 @@ public class LittleSpiderTP extends Pile{
 	 * Class will define behavior of each Tableau pile in little spider game
 	 */
 	
+//	@Override
+//	public void initialSetup(Deck d,Card[] c) {
+//		is=true;
+//		int size = d.getDeckSize();
+//		for(int i = 0; i<6; i++) {
+//			this.getPile()[i]=c[size-1-i];
+//			this.setSize(this.size()+1);
+//			d.setDeckSize(d.getDeckSize()-1); 
+//		}
+//	}
 	@Override
-	public void initialSetup(Deck d,Card[] c) {
+	public void initialSetup(Deck d, Pile p) {
 		is=true;
-		int size = d.getDeckSize();
-		for(int i = 0; i<6; i++) {
-			this.getPile()[i]=c[size-1-i];
-			this.setSize(this.size()+1);
-			d.setDeckSize(d.getDeckSize()-1); 
+		for(int i=0; i<6; i++) {
+			p.getPile()[i]=d.getCardDeck()[d.getDeckSize()-1];
+			d.setDeckSize(d.getDeckSize()-1);
+			p.setSize(p.size()+1);
 		}
+		
 	}
 
 	@Override

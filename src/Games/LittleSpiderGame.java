@@ -28,29 +28,25 @@ public class LittleSpiderGame extends Game{
 	
 	public LittleSpiderGame() {
 		deck= new Deck();
-		setTp1(new LittleSpiderTP());
-		setTp2(new LittleSpiderTP());
-		setTp3(new LittleSpiderTP());
-		setTp4(new LittleSpiderTP());
-		setTp5(new LittleSpiderTP());
-		setTp6(new LittleSpiderTP());
-		setTp7(new LittleSpiderTP());
-		setTp8(new LittleSpiderTP());
-		
+		tp1= new LittleSpiderTP();
+		tp2=new LittleSpiderTP();
+		tp3=new LittleSpiderTP();
+		tp4=new LittleSpiderTP();
+		tp5=new LittleSpiderTP();
+	    tp6=new LittleSpiderTP();
+		tp7=new LittleSpiderTP();
+		tp8=new LittleSpiderTP();
 		home1 = new SpiderHomecellPile();
-		home1.initialSetup(deck, home1.getPile()); 
-		
+		home1.initialSetup(deck, home1); 
 		home2 = new SpiderHomecellPile();
 		home2.setSize(1);
-		home1.initialSetup(deck, home2.getPile());
-		
+		home1.initialSetup(deck, home2);		
 		home3 = new SpiderHomecellPile();
 		home3.setSize(1);
-		home1.initialSetup(deck, home3.getPile());
-		
+		home1.initialSetup(deck, home3);	
 		home4 = new SpiderHomecellPile();
 		home4.setSize(1);
-		home1.initialSetup(deck, home4.getPile());
+		home1.initialSetup(deck, home4);
 		
 		int rand=3+(int)(Math.random()*3);
 		int i=0;
@@ -59,21 +55,21 @@ public class LittleSpiderGame extends Game{
 			i++;
 		}
 		tp1=new LittleSpiderTP();
-		tp1.initialSetup(deck, tp1.getPile());
+		tp1.initialSetup(deck, tp1);
 		tp2=new LittleSpiderTP();
-		tp2.initialSetup(deck, tp2.getPile());
+		tp2.initialSetup(deck, tp2);
 		tp3=new LittleSpiderTP();
-		tp3.initialSetup(deck, tp3.getPile());
+		tp3.initialSetup(deck, tp3);
 		tp4=new LittleSpiderTP();
-		tp4.initialSetup(deck, tp4.getPile());
+		tp4.initialSetup(deck, tp4);
 		tp5=new LittleSpiderTP();
-		tp5.initialSetup(deck, tp5.getPile());
+		tp5.initialSetup(deck, tp5);
 		tp6=new LittleSpiderTP();
-		tp6.initialSetup(deck, tp6.getPile());
+		tp6.initialSetup(deck, tp6);
 		tp7=new LittleSpiderTP();
-		tp7.initialSetup(deck, tp7.getPile());
+		tp7.initialSetup(deck, tp7);
 		tp8=new LittleSpiderTP();
-		tp8.initialSetup(deck, tp8.getPile());
+		tp8.initialSetup(deck, tp8);
 	}
 	public SpiderHomecellPile getHome1() {
 		return this.home1;

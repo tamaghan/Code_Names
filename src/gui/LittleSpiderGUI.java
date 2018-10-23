@@ -1,5 +1,9 @@
 package gui;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -27,6 +31,22 @@ public class LittleSpiderGUI extends GUI{
 	
 	LittleSpiderGUI(){
 		lsg = new LittleSpiderGame();
+		scl = new SelectingCardsListener();
+		tp1 = new JLabel();
+		tp2 = new JLabel();
+		tp3 = new JLabel();
+		tp4 = new JLabel();
+		tp5 = new JLabel();
+		tp6 = new JLabel();
+		tp7 = new JLabel();
+		tp8 = new JLabel();
+		home1 = new JLabel();
+		home2 = new JLabel();
+		home3 = new JLabel();
+		home4 = new JLabel();
+		tpHolder=new JPanel();
+		homeHolder=new JPanel();
+		gameScreen=new JPanel();
 		tp1=scl.createDisplayImage(lsg.getTp1().topCard().getGifFile());
 		tp2=scl.createDisplayImage(lsg.getTp2().topCard().getGifFile());
 		tp3=scl.createDisplayImage(lsg.getTp3().topCard().getGifFile());
@@ -51,8 +71,11 @@ public class LittleSpiderGUI extends GUI{
 		homeHolder.add(home2);
 		homeHolder.add(home3);
 		homeHolder.add(home4);
-		gameScreen.add(tpHolder);
-		gameScreen.add(homeHolder);
+		gameScreen.add(tpHolder, BorderLayout.NORTH);
+		gameScreen.add(homeHolder, BorderLayout.SOUTH);
 	}
-
+	public JPanel getGameScreen() {
+		return this.gameScreen;
+	}
+	
 }

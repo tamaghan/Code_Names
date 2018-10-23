@@ -17,18 +17,19 @@ public class GUI {
 	private Pile ogPile;
 	private Pile newPile;
 	private JPanel gamePanel;
-//	public GUI() {
-//		this.g=g;
-//	}
+	private JLabel ogLabel;
+	private JLabel newLabel;
+	private SelectingCardsListener scl;
+
 	/**
 	 * method should be generic to game type. 
 	 * Must ensure top card is updated and being displayed 
 	 * for each pile
 	 */
 	public void update() {
-//		newPile.addForTesting(newPile.size(), ogPile.topCard());
-//		ogPile.getPile()[ogPile.size()-1]=null;
-//		ogPile.setSize(ogPile.size()-1);
+		
+		ogLabel=scl.createDisplayImage(ogPile.topCard().getGifFile());
+		newLabel=scl.createDisplayImage(ogPile.topCard().getGifFile());
 		
 	}
 	public JLabel err() {
@@ -44,4 +45,5 @@ public class GUI {
 			gamePanel.add(err());
 		}
 	}
+	
 }
