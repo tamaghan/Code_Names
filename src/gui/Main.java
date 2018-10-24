@@ -28,7 +28,7 @@ public class Main {
 		JFrame frame = new JFrame("A8-404 Name Not Found");
 		frame.setSize(1200, 600);
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    MenuListener action = new MenuListener(frame);
+	    MenuListener action = new MenuListener();
 	    
 	    LittleSpiderGUI lsg = new LittleSpiderGUI();
 	    GolfGUI gg = new GolfGUI();
@@ -44,16 +44,13 @@ public class Main {
 		golf.addActionListener(action);
 		ls.addActionListener(action);
 		exit.addActionListener(action);
+		
 		menu.add(golf);
 		menu.add(ls);
 		menu.add(exit);
 		bar.add(menu);
 		frame.setJMenuBar(bar);
 		frame.getContentPane().add(gg.allCards());
-//		frame.getContentPane().add(lsg.getGameScreen());
-//		lsg.getGameScreen().setVisible(false);
-//		frame.getContentPane().add(gg.getGameScreen());
-//		lsg.getGameScreen().setVisible(false);
 	    frame.setVisible(true);
 	}
 	

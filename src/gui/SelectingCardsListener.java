@@ -16,7 +16,11 @@ public class SelectingCardsListener extends JFrame implements ActionListener{
     private static final Border SELECTED_BORDER = BorderFactory.createMatteBorder(5, 5, 5, 5,Color.BLACK);
 	private String path;
 	private static JLabel label = new JLabel();
-    
+    /**
+     * takes filename and returns jLabel with proper gif file
+     * @param fileNameRelativeToClassFile
+     * @return
+     */
     public JLabel createDisplayImage(String fileNameRelativeToClassFile) {
         JLabel retVal = new JLabel();
         java.net.URL imgURL = this.getClass().getResource(fileNameRelativeToClassFile);

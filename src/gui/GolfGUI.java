@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -87,4 +88,15 @@ public class GolfGUI extends GUI{
 	public JPanel getGameScreen() {
 		return this.gameScreen;
 	}
+	
+	/**
+	 * creates new JFrame for golf game
+	 */
+	public void golfGUI(){
+        JFrame frame = new JFrame("A8-404 Name Not Found: Golf");
+        frame.setSize(800, 400);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.getContentPane().add(gameScreen);
+        frame.setVisible(true);
+    }
 }

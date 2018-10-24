@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -96,5 +97,11 @@ public class LittleSpiderGUI extends GUI{
 	public JPanel getGameScreen() {
 		return this.gameScreen;
 	}
-
+	public void lsGUI(){
+        JFrame frame = new JFrame("A8-404 Name Not Found: Little Spider");
+        frame.setSize(800, 400);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.getContentPane().add(gameScreen);
+        frame.setVisible(true);
+    }
 }

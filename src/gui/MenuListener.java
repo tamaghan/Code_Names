@@ -24,6 +24,9 @@ public class MenuListener extends JFrame implements ActionListener{
 	private LittleSpiderGUI lsGUI;
 	private GUI gui;
 	private JFrame frame;
+	
+	private Boolean lsBoolean;
+	private Boolean gBoolean;
 	/**
 	 * 
 	 * @param frame should be the JFrame for the Main method
@@ -31,11 +34,14 @@ public class MenuListener extends JFrame implements ActionListener{
 	 * Creates new menu item for golf game, little spider game, 
 	 * and exit
 	 */
-	public MenuListener(JFrame frame) {
+	public MenuListener() {
 		golf = new JMenuItem("Golf");
 		ls = new JMenuItem("Little Spider");
 		exit = new JMenuItem("Exit");
-		this.frame=frame;
+		this.frame=new JFrame();
+		
+		lsBoolean = false;
+		gBoolean=false;
 		
 	}
 	/**
@@ -49,12 +55,11 @@ public class MenuListener extends JFrame implements ActionListener{
 		}
 		if(arg0.getSource().equals(golf)) {
 			golfGUI = new GolfGUI(); 
-			frame.getContentPane().add(golfGUI.getGameScreen());
+			golfGUI.golfGUI();
 		}
 		if(arg0.getSource().equals(ls)) {
-			
 			lsGUI = new LittleSpiderGUI();
-			frame.getContentPane().add(lsGUI.getGameScreen());
+			lsGUI.lsGUI();
 		}
 		
 	}
@@ -79,6 +84,18 @@ public class MenuListener extends JFrame implements ActionListener{
 	}
 	public void setExit(JMenuItem exit) {
 		this.exit = exit;
+	}
+	public Boolean getLsBoolean() {
+		return lsBoolean;
+	}
+	public void setLsBoolean(Boolean lsBoolean) {
+		this.lsBoolean = lsBoolean;
+	}
+	public Boolean getgBoolean() {
+		return gBoolean;
+	}
+	public void setgBoolean(Boolean gBoolean) {
+		this.gBoolean = gBoolean;
 	}
 
 }
