@@ -10,7 +10,13 @@ import javax.swing.JMenuItem;
 import Games.Game;
 
 public class MenuListener extends JFrame implements ActionListener{
-
+	/**
+	 *creates fields for JMenuItems for each of the three selections: 
+	 *exit, golf game, and little spider game.
+	 *also field for a golfGUI and a Little Spider GUI,
+	 *field for a gui, and a JFrame
+	 *
+	 */
 	private JMenuItem golf;
 	private JMenuItem ls;
 	private JMenuItem exit;
@@ -18,7 +24,13 @@ public class MenuListener extends JFrame implements ActionListener{
 	private LittleSpiderGUI lsGUI;
 	private GUI gui;
 	private JFrame frame;
-	
+	/**
+	 * 
+	 * @param frame should be the JFrame for the Main method
+	 * 
+	 * Creates new menu item for golf game, little spider game, 
+	 * and exit
+	 */
 	public MenuListener(JFrame frame) {
 		golf = new JMenuItem("Golf");
 		ls = new JMenuItem("Little Spider");
@@ -26,6 +38,10 @@ public class MenuListener extends JFrame implements ActionListener{
 		this.frame=frame;
 		
 	}
+	/**
+	 * exit menuListener exits program
+	 *  golf and ls menuListeners not working
+	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource().equals(exit)) {
@@ -36,11 +52,16 @@ public class MenuListener extends JFrame implements ActionListener{
 			frame.getContentPane().add(golfGUI.getGameScreen());
 		}
 		if(arg0.getSource().equals(ls)) {
+			
 			lsGUI = new LittleSpiderGUI();
 			frame.getContentPane().add(lsGUI.getGameScreen());
 		}
 		
 	}
+	/**
+	 *getters and setters for menu item fields 
+	 *
+	 */
 	public JMenuItem getGolf() {
 		return golf;
 	}

@@ -10,13 +10,22 @@ import Deck.Deck;
  */
 
 public class GolfHomecellPile extends Pile {
-
+	
+	/**
+	 * field tells whether initial setup has been called
+	 */
 	private boolean is;
-
+	
+	/**
+	 * pile starts out empty
+	 */
 	public void initialSetup(Deck d, Pile p) {
 		is=true;
 	}
-
+	/**
+	 * can add card if its rank is one above or one below 
+	 * the new pile's topcard, rank also wraps around
+	 */
 	public boolean add(Card c) {
 		boolean returnVal=false; 
 		if(this.topCard().getRank()==c.getRank()+1||this.topCard().getRank()==c.getRank()-1) {
@@ -34,7 +43,9 @@ public class GolfHomecellPile extends Pile {
 		}
 		return returnVal;
 	}
-
+	/**
+	 * cards cannot be removed from the homecellpile in golf
+	 */
 	public boolean remove() {
 		return false;
 	}

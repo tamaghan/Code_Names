@@ -12,6 +12,11 @@ import pile.SpiderHomecellPile;
 
 
 public class LittleSpiderGame extends Game{
+	
+	/**
+	 * fields for the 8 tableau piles, 4 homecell piles, and deck
+	 */
+	
 	private LittleSpiderTP tp1;
 	private LittleSpiderTP tp2;
 	private LittleSpiderTP tp3;
@@ -26,6 +31,10 @@ public class LittleSpiderGame extends Game{
 	private SpiderHomecellPile home4;
 	private Deck deck;
 	
+	/**
+	 * constructor shuffles the deck and calls initialSetup 
+	 * for all of the piles
+	 */
 	public LittleSpiderGame() {
 		deck= new Deck();
 		tp1= new LittleSpiderTP();
@@ -71,6 +80,9 @@ public class LittleSpiderGame extends Game{
 		tp8=new LittleSpiderTP();
 		tp8.initialSetup(deck, tp8);
 	}
+	/**
+	 * getters and setters for the fields above
+	 */
 	public SpiderHomecellPile getHome1() {
 		return this.home1;
 	}

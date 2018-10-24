@@ -12,10 +12,14 @@ import Deck.Deck;
 
 public class GolfTP extends Pile{
 	
-
+	/**
+	 * field tells whether initial setup has been called
+	 */
 	private boolean is;
 
-	
+	/**
+	 * creates pile with 5 cards
+	 */
 	@Override
 	public void initialSetup(Deck d, Pile p) {
 		is=true;
@@ -25,18 +29,9 @@ public class GolfTP extends Pile{
 			d.getCardDeck()[d.getDeckSize()]=null;
 		}
 	}
-//	@Override
-//	public void initialSetup(Deck d, Pile p) {
-//		is=true;
-//		for(int i=0; i<5; i++) {
-//			p.getPile()[i]=d.getCardDeck()[d.getDeckSize()-1];
-//			d.setDeckSize(d.getDeckSize()-1);
-//			d.getCardDeck()[d.getDeckSize()]=null;
-//			p.setSize(p.size()+1);
-//		}
-//	}
-
-
+	/**
+	 * once initial setup is complete, cards may not be added
+	 */
 	@Override
 	public boolean add(Card c) {
 		boolean returnVal = false;
@@ -47,7 +42,9 @@ public class GolfTP extends Pile{
 		}
 		return returnVal;
 	}
-
+	/**
+	 * top card is removed from selected pile
+	 */
 	@Override
 	public boolean remove() {
 		if(size()==0) {

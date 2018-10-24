@@ -11,11 +11,22 @@ import Deck.Deck;
  */
 
 public class SpiderHomecellPile extends Pile {
+	
+	/**
+	 * field tells whether initial setup has been called
+	 * 
+	 * hpCount keeps track of number of homecell piles made 
+	 * for Spider Game
+	 */
 	private boolean is;
 	private int hpCount;
 	
-	
+	/**
+	 * uses one instance of a homecell pile with 4 pile params,
+	 * first pile adds 
+	 */
 	public void initialSetup(Deck d, Pile p) {
+		is=true;
 		p.setSize(0);
 		is=true;
 		if(hpCount==0) {

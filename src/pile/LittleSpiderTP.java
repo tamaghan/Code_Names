@@ -11,23 +11,14 @@ import Deck.Deck;
 
 public class LittleSpiderTP extends Pile{
 	
-
+	/**
+	 * field tells whether initial setup has been called
+	 */
 	private boolean is;
 	
 	/**
-	 * Class will define behavior of each Tableau pile in little spider game
+	 * creates tableau pile with 6 cards
 	 */
-	
-//	@Override
-//	public void initialSetup(Deck d,Card[] c) {
-//		is=true;
-//		int size = d.getDeckSize();
-//		for(int i = 0; i<6; i++) {
-//			this.getPile()[i]=c[size-1-i];
-//			this.setSize(this.size()+1);
-//			d.setDeckSize(d.getDeckSize()-1); 
-//		}
-//	}
 	@Override
 	public void initialSetup(Deck d, Pile p) {
 		is=true;
@@ -38,7 +29,10 @@ public class LittleSpiderTP extends Pile{
 		}
 		
 	}
-
+	/**
+	 * method returns true if the rank of the card added is 
+	 * either one above or one below the topcard
+	 */
 	@Override
 	public boolean add(Card c) {
 		boolean returnVal=false; 
@@ -57,7 +51,9 @@ public class LittleSpiderTP extends Pile{
 		}
 		return returnVal;
 	}
-
+	/**
+	 * removes topcard if pile is not empty
+	 */
 	@Override
 	public boolean remove() {
 		if(size()==0) {

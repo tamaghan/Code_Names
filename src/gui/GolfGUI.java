@@ -8,7 +8,11 @@ import javax.swing.JPanel;
 import Games.GolfGame;
 
 public class GolfGUI extends GUI{
-	
+	/**
+	 * field for a GolfGame, as well as JLabels for the 
+	 * top card in each pile, and JPanels to hold and organize 
+	 * the JLabels, as well as field for SelectingCardsListener
+	 */
 	private GolfGame g;
 	private JPanel gameScreen;
 	private JPanel tpHolder;
@@ -25,6 +29,14 @@ public class GolfGUI extends GUI{
 	private JLabel stock;
 	private SelectingCardsListener scl;
 	
+	
+	/**
+	 * constructor creates a new game of golf and a new 
+	 * SelectingCardsListener instance. Then sets the 
+	 * JLabels equal to their appropriate gifFiles. Constructor 
+	 * then adds the JLabels to their appropriate panels, which 
+	 * are all added to one JPanel 
+	 */
 	public GolfGUI() {
 		g= new GolfGame();
 		scl = new SelectingCardsListener();
@@ -45,6 +57,7 @@ public class GolfGUI extends GUI{
 		tp6=scl.createDisplayImage(g.getTp6().topCard().getGifFile());
 		tp7=scl.createDisplayImage(g.getTp7().topCard().getGifFile());
 		tpHolder=new JPanel();
+		tpHolder.add(new JLabel("Tableau"), BorderLayout.NORTH);
 		tpHolder.add(tp1);
 		tpHolder.add(tp2);
 		tpHolder.add(tp3);
@@ -54,15 +67,23 @@ public class GolfGUI extends GUI{
 		tpHolder.add(tp7);
 		home=scl.createDisplayImage("/PictureFolder/green.gif");
 		homeHolder = new JPanel();
-		homeHolder.add(home);
+		JLabel homeA = new JLabel("HomeCell");
+		homeHolder.add(homeA, BorderLayout.NORTH);
+		homeHolder.add(home, BorderLayout.SOUTH);
 		stock=scl.createDisplayImage(g.getStock().topCard().getGifFile());
 		stockHolder = new JPanel();
-		stockHolder.add(stock);
+		JLabel stockA = new JLabel("Stock");
+		stockHolder.add(stockA, BorderLayout.NORTH);
+		stockHolder.add(stock, BorderLayout.SOUTH);
 		gameScreen=new JPanel();
-		gameScreen.add(tpHolder, BorderLayout.WEST);
+		gameScreen.add(tpHolder, BorderLayout.NORTH);
 		gameScreen.add(homeHolder, BorderLayout.CENTER);
-		gameScreen.add(stockHolder, BorderLayout.EAST);
+		gameScreen.add(stockHolder, BorderLayout.SOUTH);
 	}
+	/**
+	 * 
+	 * @return the JPanel which holds all of the piles
+	 */
 	public JPanel getGameScreen() {
 		return this.gameScreen;
 	}

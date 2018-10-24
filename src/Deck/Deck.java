@@ -12,17 +12,26 @@ package Deck;
  */
 
 public class Deck { 
-	// Creates an array of Card objects
+	/**
+	 * Creates an array of Card objects
+	 */
 	private Card[] cardDeck;
 	private int deckSize;
 
-	// Constructs a deck
+	/**
+	 *  Constructs a deck of 52 cards, each with a unique combination of suit, 
+	 *  rank, and gif file name
+	 */
 	public Deck() {
-		// Creates 52 card, index 0 to index 51
+		/**
+		 *  Creates 52 card, index 0 to index 51
+		 */
 		this.cardDeck = new Card[52];
 		this.deckSize=52;
 		
-		// Creates 'club' suit (Black)
+		/**
+		 *  Creates 'club' suit (Black)
+		 */
 		for (int i = 0; i<13; i++) {
 			int j=i+1;
 			cardDeck[i] = new Card(1+i,"Clubs");
@@ -41,7 +50,9 @@ public class Deck {
 			
 		}
 		
-		// Creates 'Diamonds' suit (Red)
+		/**
+		 *  Creates 'Diamonds' suit (Red)
+		 */
 		for (int i = 13; i<26; i++) {
 			int j=i-12;
 			cardDeck[i] = new Card(i-12,"Diamonds");
@@ -59,7 +70,9 @@ public class Deck {
 			}
 		}
 		
-		// Creates 'Hearts' suit (Red)
+		/**
+		 *  Creates 'Hearts' suit (Red)
+		 */
 		for (int i = 26; i<39; i++) {
 			int j=i-25;
 			cardDeck[i] = new Card(i-25,"Hearts");
@@ -78,7 +91,9 @@ public class Deck {
 			j++;
 		}
 		
-		// Creates 'Spades' suit (Black)
+		/**
+		 *  Creates 'Spades' suit (Black)
+		 */
 		for (int i = 39; i<52; i++) {
 			int j=i-38;
 			cardDeck[i] = new Card(i-38,"Spades");
@@ -119,6 +134,12 @@ public class Deck {
 	public void setCardDeck(Card[] cardDeck) {
 		this.cardDeck = cardDeck;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 * returns the cardDeck, but cut at a random point 
+	 */
 	public Card[] cutDeck() {
 		int dSize = this.getDeckSize();
 		int halfD = dSize/2;
@@ -145,6 +166,10 @@ public class Deck {
 		
 		return this.cardDeck;
 	}
+	/**
+	 * 
+	 * @returns the cardDeck, completely shuffled
+	 */
 	public Card[] shuffle() {
 		int j = 0;
 		int deckSize = this.getDeckSize();
@@ -152,19 +177,19 @@ public class Deck {
 		Card[] firstHalf = new Card[halfDeck];
 		Card[] secondHalf = new Card[halfDeck];
 		this.setCardDeck(this.cutDeck());
-//		for(int i=0; i<halfDeck; i++) {
-//			firstHalf[i]=this.getCardDeck()[i];
-//			this.getCardDeck()[i]=null;
-//		}
-//		for(int i=0; i<halfDeck; i++) {
-//			secondHalf[i]=this.getCardDeck()[i+halfDeck];
-//			this.getCardDeck()[i+halfDeck]=null;
-//		}
-//		for(int i=0; i<deckSize; i+=2) {
-//			this.getCardDeck()[i]=secondHalf[j];
-//			this.getCardDeck()[i+1]=firstHalf[j];
-//			j++;
-//		}
+		for(int i=0; i<halfDeck; i++) {
+			firstHalf[i]=this.getCardDeck()[i];
+			this.getCardDeck()[i]=null;
+		}
+		for(int i=0; i<halfDeck; i++) {
+			secondHalf[i]=this.getCardDeck()[i+halfDeck];
+			this.getCardDeck()[i+halfDeck]=null;
+		}
+		for(int i=0; i<deckSize; i+=2) {
+			this.getCardDeck()[i]=secondHalf[j];
+			this.getCardDeck()[i+1]=firstHalf[j];
+			j++;
+		}
 		return secondHalf;
 		
 	}
