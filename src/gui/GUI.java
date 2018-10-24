@@ -66,6 +66,7 @@ public class GUI {
 		}else {
 			gamePanel.add(err(p));
 		}
+		
 	}
 	/**
 	 * 
