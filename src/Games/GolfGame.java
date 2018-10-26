@@ -1,4 +1,6 @@
 package Games;
+import com.sun.glass.ui.Timer;
+
 import Deck.Deck;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
@@ -6,8 +8,8 @@ import pile.Stock;
 /**
  * Defines class representing a Golf game. 
  * Each game instance has 7 tableau piles, 1 homecell pile, and 1 stock pile [4 points]
- * @author tamaghan , dandrijje, fmdestin
- * @version 1.0
+ * @author tamaghan , dandrijje, fmdestin, thomas.
+ * @version 2.0
  * 
  */
 

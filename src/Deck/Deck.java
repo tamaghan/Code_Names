@@ -7,7 +7,7 @@ package Deck;
  *
 /** Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank [6 points]
  * .
- * @author tamaghan , dandrijje, fmdestin
+ * @author tamaghan , dandrijje, fmdestin, thomas
  * 
  */
 

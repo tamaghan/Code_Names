@@ -7,7 +7,7 @@ import Deck.Deck;
  * The stock this.getPile() contains the 
  * cards that have not been dealt. Each game has its own 
  * rules for how cards are dealt from the stock this.getPile().
- * @author tamaghan , dandrijje, fmdestin, 
+ * @author tamaghan , dandrijje, fmdestin, thomas
  *
  */
 

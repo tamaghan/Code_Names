@@ -6,7 +6,7 @@ import Deck.Deck;
 /**
  *   Class will define behavior of each Tableau pile in golf game
  * @author tamaghan , dandrijje, fmdestin, 
- * @version 1.0 
+ * @version .0 
  *
  */
 

@@ -13,7 +13,11 @@ import code.Board;
 import code.Location;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
-
+/**
+ * Defines GUI actions.
+ * @author  tamaghan , dandrijje, fmdestin, thomas
+ *
+ */
 public class TimerHandler implements ActionListener{
 	/** Refers to present GUI instance. */
 	private GUI _gui;

@@ -6,7 +6,7 @@ import pile.SpiderHomecellPile;
 
 /**
  * Each game instance has 8 tableau piles, 4 homecell piles, and 0 stock piles
- * @author tamaghan , dandrijje, fmdestin
+ * @author tamaghan , dandrijje, fmdestin, thomas
  * @version 1.0
  */
 

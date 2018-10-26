@@ -3,10 +3,14 @@ package Games;
 import gui.SelectingCardsListener;
 import pile.GolfTP;
 import pile.Pile;
-
+/**
+ *creates new instance of SelectingCardsListener
+ * @author  tamaghan , dandrijje, fmdestin, thomas
+ *
+ */
 public abstract class Game {
 	/**
-	 * creates new instance of SelectingCardsListener
+	 * 
 	 */
 	SelectingCardsListener scl = new SelectingCardsListener();
 	

@@ -1,6 +1,17 @@
 package gui;
 
 import java.awt.Color;
+/**
+ *fields of the games,
+	 * original piles,
+	 * new pile,
+	 * JPanel for the Game,
+	 * original Label which holds the original pile
+	 * newLabel which holds the new pile
+	 * SelctingCardsListener 
+ * @author  tamaghan , dandrijje, fmdestin, thomas
+ *
+ */
 import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
@@ -14,17 +25,9 @@ import Games.Game;
 import pile.Pile;
 import javax.swing.Timer;
 import gui.event_handlers.TimeHandler;
+import gui.event_handlers.TimerHandler;
 public class GUI {
 	
-	/**
-	 * fields of the games,
-	 * original piles,
-	 * new pile,
-	 * JPanel for the Game,
-	 * original Label which holds the original pile
-	 * newLabel which holds the new pile
-	 * SelctingCardsListener 
-	 */
 	private Game g;
 	private Pile ogPile;
 	private Pile newPile;
