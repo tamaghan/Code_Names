@@ -3,6 +3,7 @@ import Deck.Deck;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
 import pile.Stock;
+import javax.swing.Timer;
 /**
  * Defines class representing a Golf game. 
  * Each game instance has 7 tableau piles, 1 homecell pile, and 1 stock pile [4 points]
@@ -27,6 +28,7 @@ public class GolfGame extends Game{
 	private Stock stock;
 	private Deck deck;
 	private boolean easterEggAvailability;
+	private Timer timer;
 	
 	/**
 	 * constructor shuffles the deck a random number of times,
@@ -201,7 +203,9 @@ public class GolfGame extends Game{
 		this.deck = deck;
 	}
 	
-	
-	
+	public boolean findEasterEgg()
+	{
+		
+	}
 	
 }
