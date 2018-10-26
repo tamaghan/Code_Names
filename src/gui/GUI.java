@@ -12,7 +12,8 @@ import Deck.Card;
 import Deck.Deck;
 import Games.Game;
 import pile.Pile;
-
+import javax.swing.Timer;
+import gui.event_handlers.TimeHandler;
 public class GUI {
 	
 	/**
@@ -84,5 +85,16 @@ public class GUI {
 		 
 		return panel;
 	}
+	
+	public boolean findAnEasterEgg(String clue, String count) {
+	    	if(!_foundEasterEgg) {
+	        	if(clue.equals("Easter Egg") && count.equals("007")) {
+	        		_timer = new Timer(1000, new TimerHandler(this, _board));
+	        		_timer.start();
+	        		_foundEasterEgg = true;
+	            	return true;
+	        	}
+	    	}
+	    	return false;
 	
 }
