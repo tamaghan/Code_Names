@@ -26,6 +26,7 @@ public class GolfGame extends Game{
 	private GolfHomecellPile home;
 	private Stock stock;
 	private Deck deck;
+	private boolean easterEggAvailability;
 	
 	/**
 	 * constructor shuffles the deck a random number of times,
