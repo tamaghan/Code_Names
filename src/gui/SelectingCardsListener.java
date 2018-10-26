@@ -9,12 +9,17 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.border.Border;
-
+/**
+ * Class used for selecting cards and setting up JLabels
+ * @author  tamaghan , dandrijje, fmdestin, tbjackso
+ *
+ */
 public class SelectingCardsListener extends JFrame implements ActionListener{
-	
+	/**
+	 * fields for selecting a boarder, unselecting a border, and a JLabel
+	 */
 	private static final Border UNSELECTED_BORDER = BorderFactory.createEmptyBorder(5, 5, 5, 5);
     private static final Border SELECTED_BORDER = BorderFactory.createMatteBorder(5, 5, 5, 5,Color.BLACK);
-	private String path;
 	private static JLabel label = new JLabel();
     /**
      * takes filename and returns jLabel with proper gif file
@@ -36,15 +41,24 @@ public class SelectingCardsListener extends JFrame implements ActionListener{
         retVal.setMinimumSize(d);	
         return retVal;
       }
+    /**
+     * selects label
+     * @param label
+     */
     public static void select(JLabel label) {
         label.setBorder(SELECTED_BORDER);
         label.repaint();
       }
-    
+    /**
+     * unselects label
+     */
     public static void unselect() {
         label.setBorder(UNSELECTED_BORDER);
         label.repaint();
     }
+    /**
+     * method to be deleted
+     */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		

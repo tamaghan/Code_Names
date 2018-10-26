@@ -1,6 +1,4 @@
 package Games;
-import com.sun.glass.ui.Timer;
-
 import Deck.Deck;
 import pile.GolfHomecellPile;
 import pile.GolfTP;
@@ -8,8 +6,8 @@ import pile.Stock;
 /**
  * Defines class representing a Golf game. 
  * Each game instance has 7 tableau piles, 1 homecell pile, and 1 stock pile [4 points]
- * @author tamaghan , dandrijje, fmdestin, thomas.
- * @version 2.0
+ * @author tamaghan , dandrijje, fmdestin, tbjackso
+ * @version 1.0
  * 
  */
 
@@ -28,8 +26,6 @@ public class GolfGame extends Game{
 	private GolfHomecellPile home;
 	private Stock stock;
 	private Deck deck;
-	private boolean easterEggAvailability;
-	private Timer timer;
 	
 	/**
 	 * constructor shuffles the deck a random number of times,
@@ -203,6 +199,7 @@ public class GolfGame extends Game{
 	public void setDeck(Deck deck) {
 		this.deck = deck;
 	}
+	
 	
 	
 	

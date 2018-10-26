@@ -1,16 +1,17 @@
 package Games;
 
 import gui.SelectingCardsListener;
+
 import pile.GolfTP;
 import pile.Pile;
 /**
- *creates new instance of SelectingCardsListener
- * @author  tamaghan , dandrijje, fmdestin, thomas
+ * Class helps determine if moves are valid in games
+ * @author tbjackso, fmdestin, tamaghan , dandrijje
  *
  */
 public abstract class Game {
 	/**
-	 * 
+	 * creates new instance of SelectingCardsListener
 	 */
 	SelectingCardsListener scl = new SelectingCardsListener();
 	

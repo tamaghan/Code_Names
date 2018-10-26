@@ -8,7 +8,11 @@ import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 
 import Games.Game;
-
+/**
+ * Defines Menulistener class which will be used for menuItems
+ * @author  tamaghan , dandrijje, fmdestin, tbjackso
+ *
+ */
 public class MenuListener extends JFrame implements ActionListener{
 	/**
 	 *creates fields for JMenuItems for each of the three selections: 
@@ -25,8 +29,6 @@ public class MenuListener extends JFrame implements ActionListener{
 	private GUI gui;
 	private JFrame frame;
 	
-	private Boolean lsBoolean;
-	private Boolean gBoolean;
 	/**
 	 * 
 	 * @param frame should be the JFrame for the Main method
@@ -39,9 +41,6 @@ public class MenuListener extends JFrame implements ActionListener{
 		ls = new JMenuItem("Little Spider");
 		exit = new JMenuItem("Exit");
 		this.frame=new JFrame();
-		
-		lsBoolean = false;
-		gBoolean=false;
 		
 	}
 	/**
@@ -64,38 +63,51 @@ public class MenuListener extends JFrame implements ActionListener{
 		
 	}
 	/**
-	 *getters and setters for menu item fields 
+	 *getter for golf 
 	 *
 	 */
 	public JMenuItem getGolf() {
 		return golf;
 	}
+	/**
+	 * setter for golf
+	 * @param golf
+	 */
 	public void setGolf(JMenuItem golf) {
 		this.golf = golf;
 	}
+	/**
+	 * getter for ls
+	 * @return
+	 */
 	public JMenuItem getLs() {
 		return ls;
 	}
+	/**
+	 * setter for ls
+	 * @param ls
+	 */
 	public void setLs(JMenuItem ls) {
 		this.ls = ls;
 	}
+	/**
+	 * getter for exit
+	 * @return
+	 */
 	public JMenuItem getExit() {
 		return exit;
 	}
+	/**
+	 * setter for exit
+	 * @param exit
+	 */
 	public void setExit(JMenuItem exit) {
 		this.exit = exit;
 	}
-	public Boolean getLsBoolean() {
-		return lsBoolean;
-	}
-	public void setLsBoolean(Boolean lsBoolean) {
-		this.lsBoolean = lsBoolean;
-	}
-	public Boolean getgBoolean() {
-		return gBoolean;
-	}
-	public void setgBoolean(Boolean gBoolean) {
-		this.gBoolean = gBoolean;
-	}
+	/**
+	 * getter for lsBoolean
+	 * @return
+	 */
+
 
 }

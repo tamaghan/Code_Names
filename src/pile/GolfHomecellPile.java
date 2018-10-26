@@ -4,7 +4,7 @@ import Deck.Card;
 import Deck.Deck;
 /**
  *  Class will define behavior of each home cell pile in little spider game
- * @author tamaghan , dandrijje, fmdestin, 
+ * @author tamaghan , dandrijje, fmdestin, tbjackso
  * @version 1.0 
  *
  */

@@ -7,7 +7,7 @@ import Deck.Deck;
 
 /**
  *  
- * @author tamaghan , dandrijje, fmdestin, 
+ * @author tamaghan , dandrijje, fmdestin, tbjackso
  * @version 3.0 
  *
  */
@@ -60,7 +60,14 @@ public abstract class Pile {
 	 * @return the top card of the pile
 	 */
 	public Card topCard() {
-		return pile[this.size()-1];
+		if(this.size()>0){
+			return pile[this.size()-1];
+		}
+		else {
+			Card empty = new Card(-1, "empty");
+			empty.setGifFile("/PictureFolder/green.gif");
+			return empty;
+		}
 	}
 	
 	/**

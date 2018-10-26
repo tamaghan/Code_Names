@@ -1,7 +1,7 @@
 package Deck;
 /**
- * Defines Deck class which creates 52 Card instances. Each Card instance has unique combination of suit & rank
- * @author  tamaghan , dandrijje, fmdestin, thomas
+ * Defines Card class. Each Card instance has unique combination of suit & rank
+ * @author  tamaghan , dandrijje, fmdestin, tbjackso
  *
  */
 public class Card {

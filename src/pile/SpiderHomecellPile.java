@@ -5,7 +5,7 @@ import Deck.Deck;
 
 /**
  *  Class will define behavior of each home cell this.getPile() in little spider game
- * @author tamaghan , dandrijje, fmdestin, 
+ * @author tamaghan , dandrijje, fmdestin, tbjackso
  * @version 1.0 
  *
  */
@@ -59,7 +59,9 @@ public class SpiderHomecellPile extends Pile {
 			hpCount+=1;
 		}
 	}	
-
+	/**
+	 * adds card to pile if the suits match and the card is either one above for hearts and diamonds or one below for clubs and spades 
+	 */
 	public boolean add(Card c) {
 		boolean returnVal = false;
 		if(this.topCard().getSuit()=="Hearts"&&c.getSuit()=="Hearts"&&this.topCard().getRank()==c.getRank()-1) {
@@ -82,7 +84,9 @@ public class SpiderHomecellPile extends Pile {
 		
 		return returnVal;
 	}
-
+	/**
+	 * removes top card if the pile contains more than one card. 
+	 */
 	public boolean remove() {
 		if(this.size()>=2) {
 			this.getPile()[size()-1]=null;
