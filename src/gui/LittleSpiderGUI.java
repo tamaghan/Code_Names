@@ -115,14 +115,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp1(), tp1);
 					}else {
-						if(!getCard().equals(lsg.getTp1().topCard())) {
-							if(validMove(lsg.getTp1())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp1().topCard())) {
+								if(validMove(lsg.getTp1())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -148,14 +152,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp2(), tp2);
 					}else {
-						if(!getCard().equals(lsg.getTp2().topCard())) {
-							if(validMove(lsg.getTp2())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp2().topCard())) {
+								if(validMove(lsg.getTp2())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -181,14 +189,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp3(), tp3);
 					}else {
-						if(!getCard().equals(lsg.getTp3().topCard())) {
-							if(validMove(lsg.getTp3())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp3().topCard())) {
+								if(validMove(lsg.getTp3())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -214,14 +226,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp4(), tp4);
 					}else {
-						if(!getCard().equals(lsg.getTp4().topCard())) {
-							if(validMove(lsg.getTp4())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp4().topCard())) {
+								if(validMove(lsg.getTp4())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -247,14 +263,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp5(), tp5);
 					}else {
-						if(!getCard().equals(lsg.getTp5().topCard())) {
-							if(validMove(lsg.getTp5())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp5().topCard())) {
+								if(validMove(lsg.getTp5())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -280,14 +300,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp6(), tp6);
 					}else {
-						if(!getCard().equals(lsg.getTp6().topCard())) {
-							if(validMove(lsg.getTp6())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp6().topCard())) {
+								if(validMove(lsg.getTp6())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -312,14 +336,18 @@ public class LittleSpiderGUI extends GUI{
 				if(!isCardSelected()) {
 					select(lsg.getTp7(), tp7);
 				}else {
-					if(!getCard().equals(lsg.getTp7().topCard())) {
-						if(validMove(lsg.getTp7())) {
-							deselect();
-						}else {
-							err("The Card You Have Selected Cannot Be Moved Here");
-						}
+					if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+						err("This Card Cannot Be Removed From the HomeCell Pile");
 					}else {
-						deselect();
+						if(!getCard().equals(lsg.getTp7().topCard())) {
+							if(validMove(lsg.getTp7())) {
+								deselect();
+							}else {
+								err("The Card You Have Selected Cannot Be Moved Here");
+							}
+						}else {
+							deselect();
+						}
 					}
 				}
 			}
@@ -345,14 +373,18 @@ public class LittleSpiderGUI extends GUI{
 					if(!isCardSelected()) {
 						select(lsg.getTp8(), tp8);
 					}else {
-						if(!getCard().equals(lsg.getTp8().topCard())) {
-							if(validMove(lsg.getTp8())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
+						if((getCard().equals(lsg.getHome1().topCard())&&lsg.getHome1().size()==1)||(getCard().equals(lsg.getHome2().topCard())&&lsg.getHome2().size()==1)||(getCard().equals(lsg.getHome3().topCard())&&lsg.getHome3().size()==1)||(getCard().equals(lsg.getHome4().topCard())&&lsg.getHome4().size()==1)) {
+							err("This Card Cannot Be Removed From the HomeCell Pile");
 						}else {
-							deselect();
+							if(!getCard().equals(lsg.getTp8().topCard())) {
+								if(validMove(lsg.getTp8())) {
+									deselect();
+								}else {
+									err("The Card You Have Selected Cannot Be Moved Here");
+								}
+							}else {
+								deselect();
+							}
 						}
 					}
 				}
@@ -375,7 +407,7 @@ public class LittleSpiderGUI extends GUI{
 			@Override
 			public void mousePressed(MouseEvent e){
 				if(!isCardSelected()) {
-					if(lsg.getHome1().size()>1) {
+					if(lsg.getHome1().size()!=0) {
 						select(lsg.getHome1(), home1);
 					}else {
 						err("This Card Cannot Be Removed");
@@ -410,7 +442,7 @@ public class LittleSpiderGUI extends GUI{
 			@Override
 			public void mousePressed(MouseEvent e){
 				if(!isCardSelected()) {
-					if(lsg.getHome2().size()>1) {
+					if(lsg.getHome2().size()!=0) {
 						select(lsg.getHome2(), home2);
 					}else {
 						err("This Card Cannot Be Removed");
@@ -445,7 +477,7 @@ public class LittleSpiderGUI extends GUI{
 			@Override
 			public void mousePressed(MouseEvent e){
 				if(!isCardSelected()) {
-					if(lsg.getHome3().size()>1) {
+					if(lsg.getHome3().size()!=0) {
 						select(lsg.getHome3(), home3);
 					}else {
 						err("This Card Cannot Be Removed");
@@ -479,24 +511,24 @@ public class LittleSpiderGUI extends GUI{
 			}
 			@Override
 			public void mousePressed(MouseEvent e){
-					if(!isCardSelected()) {
-						if(lsg.getHome4().size()>1) {
-							select(lsg.getHome4(), home4);
+				if(!isCardSelected()) {
+					if(lsg.getHome4().size()!=0) {
+						select(lsg.getHome4(), home4);
+					}else {
+						err("This Card Cannot Be Removed");
+					}
+				}else {
+					if(!getCard().equals(lsg.getHome4().topCard())) {
+						if(validMove(lsg.getHome4())) {
+							deselect();
 						}else {
-							err("This Card Cannot Be Removed");
+							err("The Card You Have Selected Cannot Be Moved Here");
 						}
 					}else {
-						if(!getCard().equals(lsg.getHome4().topCard())) {
-							if(validMove(lsg.getHome4())) {
-								deselect();
-							}else {
-								err("The Card You Have Selected Cannot Be Moved Here");
-							}
-						}else {
-							deselect();
-						}
+						deselect();
 					}
-				
+				}
+
 			}
 			@Override
 			public void mouseReleased(MouseEvent e){	
