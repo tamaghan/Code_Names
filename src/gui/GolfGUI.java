@@ -380,7 +380,9 @@ public class GolfGUI extends GUI {
 	 */
 	public void selectStock() {
 		if(g.getStock().size()!=0) {
-			deselect();
+			if(isCardSelected()) {
+				deselect();
+			}
 			g.getHome().getPile()[g.getHome().size()]=g.getStock().topCard();
 			g.getHome().setSize(g.getHome().size()+1);
 			g.getStock().remove();
