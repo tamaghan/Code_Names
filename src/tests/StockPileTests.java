@@ -28,7 +28,7 @@ public class StockPileTests {
 	}
 	
 	/*
-	*Forty Thieves initially holds 54 cards
+	*Forty Thieves initially holds 57 cards
 	*/
 	@Test
 	public void fortyThievesInitialStock() {
