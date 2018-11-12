@@ -12,6 +12,7 @@ import Games.GolfGame;
 import Games.ThievesGame;
 import pile.GolfTP;
 import pile.Stock;
+import pile.ThievesStock;
 
 public class StockPileTests {
 	/*
@@ -82,12 +83,12 @@ public class StockPileTests {
 	 */
 	@Test
 	public void testFortyThievesStockRemove() {
-		Stock g = new Stock();
+		ThievesStock g = new ThievesStock();
 		// not calling initialSetup for testing purposes
 		Card aceOfSpades = new Card(1, "Spade");
 		Card twoOfDiamonds = new Card(2, "Diamond");
-		g.addForTesting(0, aceOfSpades);
-		g.addForTesting(0, aceOfSpades);
+		g.getSPile().push(aceOfSpades);
+		g.getSPile().push(twoOfDiamonds);
 		assertTrue(g.remove());
 		assertTrue(g.remove());
 		assertFalse(g.remove());
