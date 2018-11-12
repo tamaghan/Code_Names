@@ -91,6 +91,13 @@ public class ThievesGame extends Game{
 		stock.initialSetup(d, stock);
 		waste.initialSetup(d, waste);
 	}
+	
+	/**
+	 * 
+	 */
+	public void stockRemove() {
+		getWaste().getSPile().push(getStock().getSPile().pop());
+	}
 	/**
 	 * getter for tp1
 	 * @return tp1
