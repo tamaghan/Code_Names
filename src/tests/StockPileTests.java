@@ -9,6 +9,7 @@ import org.junit.Test;
 import Deck.Card;
 import Deck.Deck;
 import Games.GolfGame;
+import Games.ThievesGame;
 import pile.GolfTP;
 import pile.Stock;
 
@@ -33,7 +34,7 @@ public class StockPileTests {
 	@Test
 	public void fortyThievesInitialStock() {
 		ThievesGame tg = new ThievesGame();
-		assertEquals(tg.getStock().size(), 57);
+		assertEquals(tg.getStock().getSize(), 57);
 	}
 	
 	
