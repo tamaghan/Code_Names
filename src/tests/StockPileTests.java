@@ -29,15 +29,6 @@ public class StockPileTests {
 		assertEquals(gg.getStock().size(), 17);
 	}
 	
-	/*
-	*Forty Thieves initially holds 57 cards
-	*/
-	@Test
-	public void fortyThievesInitialStock() {
-		ThievesGame tg = new ThievesGame();
-		assertEquals(tg.getStock().getSize(), 57);
-	}
-	
 	
 	/*
 	 * Golf stock pile correctly returns if adding a specific card 
@@ -77,22 +68,7 @@ public class StockPileTests {
 	}
 	
 	
-	/*
-	 * Forty Thieves stock pile correctly returns if removing top 
-	 * card is legal or illegal (e.g., if the stock pile is NOT empty)
-	 */
-	@Test
-	public void testFortyThievesStockRemove() {
-		ThievesStock g = new ThievesStock();
-		// not calling initialSetup for testing purposes
-		Card aceOfSpades = new Card(1, "Spade");
-		Card twoOfDiamonds = new Card(2, "Diamond");
-		g.getSPile().push(aceOfSpades);
-		g.getSPile().push(twoOfDiamonds);
-		assertTrue(g.remove());
-		assertTrue(g.remove());
-		assertFalse(g.remove());
-	}
+	
 	/*
 	 * Removing card from Golf's stock 
 	 * pile decreases its number of cards 
