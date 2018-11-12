@@ -26,6 +26,14 @@ public class StockPileTests {
 		GolfGame gg = new GolfGame();
 		assertEquals(gg.getStock().size(), 17);
 	}
+	
+	@Test
+	public void fortyThievesInitialStock() {
+		ThievesGame tg = new ThievesGame();
+		assertEquals(tg.getStock().size(), 57);
+	}
+	
+	
 	/*
 	 * Golf stock pile correctly returns if adding a specific card 
 	 * is legal or illegal 
@@ -45,6 +53,7 @@ public class StockPileTests {
 		assertFalse(g.add(kingOfClubs));
 	}
 
+	
 	/*
 	 * Golf stock pile correctly returns if removing top 
 	 * card is legal or illegal (e.g., if the stock pile is NOT empty)
