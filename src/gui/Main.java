@@ -12,10 +12,13 @@ import javax.swing.SwingUtilities;
 
 import Deck.Card;
 import Deck.Deck;
+import Deck.DoubleDeck;
 import Games.GolfGame;
 import Games.LittleSpiderGame;
+import Games.ThievesGame;
 import pile.GolfTP;
 import pile.SpiderHomecellPile;
+import pile.ThievesHomecell;
 /**
  * Defines Main class: only class to contain main method
  * @author  tamaghan , dandrijje, fmdestin, tbjackso
@@ -36,6 +39,7 @@ public class Main {
 	    
 	    LittleSpiderGUI lsg = new LittleSpiderGUI();
 	    GolfGUI gg = new GolfGUI();
+	    ThievesGUI ftG = new ThievesGUI();
 	    
 	    JMenuBar bar = new JMenuBar(); 
 		JMenu menu = new JMenu("New Game");
@@ -43,14 +47,18 @@ public class Main {
 		action.setGolf(golf);
 		JMenuItem ls = new JMenuItem("Little Spider");
 		action.setLs(ls);
+		JMenuItem fT = new JMenuItem("Fourty Thieves");
+		action.setFT(fT);
 		JMenuItem exit = new JMenuItem("Exit");
 		action.setExit(exit);
 		golf.addActionListener(action);
 		ls.addActionListener(action);
+		fT.addActionListener(action);
 		exit.addActionListener(action);
 		
 		menu.add(golf);
 		menu.add(ls);
+		menu.add(fT);
 		menu.add(exit);
 		bar.add(menu);
 		frame.setJMenuBar(bar);

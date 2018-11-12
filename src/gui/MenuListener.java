@@ -16,16 +16,18 @@ import Games.Game;
 public class MenuListener extends JFrame implements ActionListener{
 	/**
 	 *creates fields for JMenuItems for each of the three selections: 
-	 *exit, golf game, and little spider game.
-	 *also field for a golfGUI and a Little Spider GUI,
+	 *exit, golf game, Fourty thieves game, and little spider game.
+	 *also field for a golfGUI and a Little Spider GUI, FourtyThieves GUI
 	 *field for a gui, and a JFrame
 	 *
 	 */
 	private JMenuItem golf;
 	private JMenuItem ls;
+	private JMenuItem fT;
 	private JMenuItem exit;
 	private GolfGUI golfGUI;
 	private LittleSpiderGUI lsGUI;
+	private ThievesGUI fTGUI;
 	private GUI gui;
 	private JFrame frame;
 	
@@ -39,6 +41,7 @@ public class MenuListener extends JFrame implements ActionListener{
 	public MenuListener() {
 		golf = new JMenuItem("Golf");
 		ls = new JMenuItem("Little Spider");
+		fT = new JMenuItem("Fourty Thieves");
 		exit = new JMenuItem("Exit");
 		this.frame=new JFrame();
 		
@@ -59,6 +62,10 @@ public class MenuListener extends JFrame implements ActionListener{
 		if(arg0.getSource().equals(ls)) {
 			lsGUI = new LittleSpiderGUI();
 			lsGUI.lsGUI();
+		}
+		if(arg0.getSource().equals(fT)) {
+			fTGUI = new ThievesGUI();
+			fTGUI.fTGUI();
 		}
 		
 	}
@@ -91,6 +98,20 @@ public class MenuListener extends JFrame implements ActionListener{
 		this.ls = ls;
 	}
 	/**
+	 * getter for fT
+	 * @return
+	 */
+	public JMenuItem getFT() {
+		return fT;
+	}
+	/**
+	 * setter for fT
+	 * @param ls
+	 */
+	public void setFT(JMenuItem fT) {
+		this.fT = fT;
+	}
+	/**
 	 * getter for exit
 	 * @return
 	 */
@@ -104,10 +125,7 @@ public class MenuListener extends JFrame implements ActionListener{
 	public void setExit(JMenuItem exit) {
 		this.exit = exit;
 	}
-	/**
-	 * getter for lsBoolean
-	 * @return
-	 */
+	
 
 
 }
