@@ -854,7 +854,7 @@ public class ThievesGUI extends GUI{
 					if(isCardSelected()) {
 						err("No Cards Can Be Added To The Stock Pile");
 					}else {
-						ftg.getWaste().getSPile().push(ftg.getStock().getSPile().pop());
+						ftg.stockRemove();
 						update();
 					}
 				}
