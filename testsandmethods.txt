@@ -30,6 +30,19 @@ public boolean add(Card c)
  
 public boolean remove()
   Test 1: public void testLSHPRemove()
+  
+STOCK CLASS:
+public void initialSetup(Deck d, Pile p)
+  Test 1: public void testInitialSetup()
+
+public boolean add(Card c)
+  Test 1: public void testAddStock()
+
+public boolean remove()
+  Test 1: public void testStockDec()
+
+
+
  
 
 
