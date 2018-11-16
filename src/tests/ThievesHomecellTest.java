@@ -17,7 +17,7 @@ public class ThievesHomecellTest {
 
 	//Forty Thieves homecell piles initially hold 1 card [2 points]
 	@Test
-	public void initialHold() {
+	public void testInitial() {
 		DoubleDeck d = new DoubleDeck();
 		ThievesHomecell hc = new ThievesHomecell();
 		hc.initialSetup(d, hc);
@@ -28,7 +28,7 @@ public class ThievesHomecellTest {
 	
 	//Forty Thieves homecell pile correctly determines if adding a specific card is legal or illegal [2 points]
 	@Test
-	public void cardLegal() {
+	public void testAdd() {
 		DoubleDeck d = new DoubleDeck();
 		ThievesHomecell hc = new ThievesHomecell();
 		hc.initialSetup(d, hc);
@@ -40,11 +40,9 @@ public class ThievesHomecellTest {
 		assertTrue(hc.add(twoOfString));
 	}
 	
-	
-	
 	//Forty Thieves homecell pile correctly returns if removing top card is legal or illegal (e.g., always illegal) [2 points]
 	@Test
-	public void removeTopLegal() {
+	public void testRemove() {
 		DoubleDeck d = new DoubleDeck();
 		ThievesHomecell hc = new ThievesHomecell();
 		hc.initialSetup(d, hc);
@@ -54,7 +52,7 @@ public class ThievesHomecellTest {
 	//Adding a card to Forty Thieves homecell pile increases its number of cards and results 
 	//in that card being the homecell pile's new top card [2 points]
 	@Test
-	public void increaseSize() {
+	public void testSize() {
 		DoubleDeck d = new DoubleDeck();
 		ThievesHomecell hc = new ThievesHomecell();
 		hc.initialSetup(d, hc);
