@@ -57,9 +57,16 @@ public class WasteTest {
 		DoubleDeck d = new DoubleDeck();
 		ThievesWaste p = new ThievesWaste();
 		Card c = new Card(1,"Diamond");
-		assertEquals(0,p.getSize());
+		Card c2 = new Card(2,"Diamond");
 		p.getSPile().push(c);
+		p.getSPile().push(c2);
+		assertEquals(2,p.getSize());
+		assertEquals(c2,p.topCard());
+		p.remove();
 		assertEquals(1,p.getSize());
+		assertEquals(c,p.topCard());
+		p.remove();
+		assertEquals(0,p.getSize());
 	}
 	
 }
