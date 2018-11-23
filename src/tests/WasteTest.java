@@ -10,6 +10,7 @@ import Deck.Card;
 import Deck.Deck;
 import Deck.DoubleDeck;
 import Games.GolfGame;
+import Games.ThievesGame;
 import pile.GolfTP;
 import pile.Pile;
 import pile.StackPile;
@@ -44,20 +45,21 @@ public class WasteTest {
 		DoubleDeck d = new DoubleDeck();
 		ThievesWaste p = new ThievesWaste();
 		ThievesStock s = new ThievesStock();
-		s.initialSetup(d, s);
-		p.initialSetup(d, p);
-		assertEquals(0,p.size());
-		assertEquals(104,s.getSize());
-		s.remove();
-		assertEquals(103,s.getSize());
-		assertEquals(1,p.size());
+		Card c = new Card(1,"Diamond");
+		p.getSPile().push(c);
+		assertTrue(p.remove());
 	}
 	
 	//Removing a card from Forty Thieves waste pile decreases its number of cards and results 
 	//in the following card being the new top card [1 points]
 	@Test 
 	public void testSize() {
-		
+		DoubleDeck d = new DoubleDeck();
+		ThievesWaste p = new ThievesWaste();
+		Card c = new Card(1,"Diamond");
+		assertEquals(0,p.getSize());
+		p.getSPile().push(c);
+		assertEquals(1,p.getSize());
 	}
 	
 }
