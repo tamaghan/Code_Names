@@ -10,8 +10,13 @@ import Deck.Card;
 import Deck.Deck;
 import pile.GolfTP;
 import pile.LittleSpiderTP;
+import pile.ThievesWaste;
 
 public class TableauPileTests {
+	
+	
+	
+	
 	/*
 	 * Tableau piles in Golf initially hold 5 cards
 	 */
