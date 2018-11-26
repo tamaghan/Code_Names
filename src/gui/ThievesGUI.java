@@ -889,7 +889,32 @@ public class ThievesGUI extends GUI{
 			}
 		});
 		tpHolder= new JPanel();
-		tpHolder.add(new JLabel("Tableau"), BorderLayout.NORTH);
+		JLabel tableauLabel = new JLabel("Tableau");
+		tableauLabel.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				JFrame f = new JFrame("Not A Virus ;)");
+				JLabel eE = new JLabel();
+				eE=scl.createDisplayImage("/PictureFolder/computer science meme.png");
+				f.getContentPane().add(eE);
+				f.setSize(500, 500);
+				f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+				f.setVisible(true);		
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+			}
+			@Override
+			public void mouseExited(MouseEvent arg0) {
+			}
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {	
+			}
+		});
+		tpHolder.add(tableauLabel, BorderLayout.NORTH);
 		tpHolder.add(tp1);
 		tpHolder.add(tp2);
 		tpHolder.add(tp3);
