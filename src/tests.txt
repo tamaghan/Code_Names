@@ -1,7 +1,9 @@
 Submission includes a tests.txt file listing the class and method name(s) of 
 the test(s) defined for each of these requirements [2 points]
 
-Tableau pile tests: [36 points]
+(Forty Thieves tests are listed separately)
+
+Little Spider and Golf Tableau pile tests: [36 points]
 	* All tests for Tableau pile are located under tests package, TalbeauPileTest class
 	-Tableau piles in Golf initially hold 5 cards [4 points]
 		*testInitialGolfTP()
@@ -22,7 +24,7 @@ Tableau pile tests: [36 points]
 	-Removing card from Little Spider's tableau pile decreases its number of cards and results in following card being the new top card [4 points]
 		*testLSDec()
 		
-Homecell pile tests: [36 points]
+Little Spider and Golf Homecell pile tests: [36 points]
 	-Homecell pile in Golf initially holds 0 cards [4 points]
 		*testInitialGolfHomecellPile()
 	-Homecell piles in Little Spider initially hold 1 card [4 points]
@@ -42,7 +44,7 @@ Homecell pile tests: [36 points]
 	-Removing card from one of Little Spider's homecell pile decreases its number of cards and results in following card being the new top card [4 points]
 		*testLSDecHP()
 		
-Stock pile tests: [8 points]
+Golf Stock pile tests: [8 points]
 	-Golf stock initially holds 17 cards [2 points]
 		*testInitialStock()
 	-Golf stock pile correctly returns if adding a specific card is legal or illegal (e.g., the method should always return false) [2 points]
@@ -51,3 +53,42 @@ Stock pile tests: [8 points]
 		*testStockRemove()
 	-Removing card from Golf's stock pile decreases its number of cards and results in following card being the new top card [2 points]
 		*testStockDec()
+		
+Forty Thieves Tableau pile tests: [18 points]
+	-Tableau piles in Forty Thieves initially hold 3 cards [2 points]
+	
+	-Forty Thieves tableau pile method correctly determines if adding a specific card is legal or illegal. [4 points]
+	
+	-Forty Thieves tableau pile method correctly determines if removing a specific card is legal or illegal. [4 points]
+	
+	-Adding a card to Forty Thieves tableau pile increases its number of cards and results in that card being the tableau pile's new top card [4 points]
+	
+	-Removing a card from Forty Thieves tableau pile decreases its number of cards and results in following card being the new top card [4 points]
+
+Forty Thieves Homecell pile tests: [8 points]
+	-Forty Thieves homecell piles initially hold 1 card [2 points]
+		*testInitial()
+	-Forty Thieves homecell pile correctly determines if adding a specific card is legal or illegal [2 points]
+		*testAdd()
+	-Forty Thieves homecell pile correctly returns if removing top card is legal or illegal (e.g., always illegal) [2 points]
+		*testRemove()
+	-Adding a card to Forty Thieves homecell pile increases its number of cards and results in that card being the homecell pile's new top card [2 points]
+		*testSize()
+Forty Thieves Stock pile tests: [5 points]
+	-Forty Thieves stock pile initially holds 57 cards [1 points]
+		*fortyThievesInitialStock()
+	-Forty Thieves stock pile correctly returns if adding a specific card is legal or illegal (e.g., always illegal) [1 points]
+		*testThievesAdd()
+	-Forty Thieves stock pile correctly returns if removing a specific card is legal or illegal (e.g., legal if the stock pile is not empty) [1 points]
+		*testFortyThievesStockRemove()
+	-Dealing cards from Forty Thieves stock pile removes the top card from the pile, results in the next card being the new top card in the stock pile, and makes the removed card the new top card on the waste pile [1 points]
+		*testThievesStockToWaste()
+Forty Thieves Waste pile tests: [4 points]
+	-Forty Thieves waste pile initially holds 0 cards [1 points]
+		*testInitial()
+	-Forty Thieves waste pile correctly returns if adding a specific card is legal or illegal (e.g., always illegal since we use another approach for this) [1 points]
+		*testAdd()
+	-Forty Thieves waste pile correctly returns if removing a specific card is legal or illegal (e.g., always legal) [1 points]
+		*testRemove()
+	-Removing a card from Forty Thieves waste pile decreases its number of cards and results in the following card being the new top card [1 points]
+		*testSize()
