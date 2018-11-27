@@ -88,7 +88,7 @@ public class ThievesTableauTest {
 	
 	/*
 	 * Removing a card from Forty Thieves tableau pile decreases its number of cards
-	 *  and results in following card being the new top card [4 points]
+	 *  and results in following carddd being the new top card [4 points]
 	 */
 	
 	@Test 
