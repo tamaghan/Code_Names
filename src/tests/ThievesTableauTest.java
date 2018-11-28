@@ -82,6 +82,7 @@ public class ThievesTableauTest {
 		String cardsSuit = tp.topCard().getSuit();
 		int rank = tp.topCard().getRank()-1;
 		Card twoRank = new Card(rank, cardsSuit);
+		assertEquals(3,tp.getSize());
 		tp.add(twoRank);
 		assertEquals(4,tp.getSize());
 		//assertEquals(true, hc.add(twoRank));

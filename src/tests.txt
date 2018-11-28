@@ -1,7 +1,8 @@
 Submission includes a tests.txt file listing the class and method name(s) of 
 the test(s) defined for each of these requirements [2 points]
 
-(Forty Thieves tests are listed separately)
+**(Forty Thieves tests are listed separately and can all 
+be found in separate test classes than the original)**
 
 Little Spider and Golf Tableau pile tests: [36 points]
 	* All tests for Tableau pile are located under tests package, TalbeauPileTest class
@@ -56,15 +57,15 @@ Golf Stock pile tests: [8 points]
 		
 Forty Thieves Tableau pile tests: [18 points]
 	-Tableau piles in Forty Thieves initially hold 3 cards [2 points]
-	
+		*testInitialFortyTP()
 	-Forty Thieves tableau pile method correctly determines if adding a specific card is legal or illegal. [4 points]
-	
+		*testAddTP()
 	-Forty Thieves tableau pile method correctly determines if removing a specific card is legal or illegal. [4 points]
-	
+		*testFortyThievesStockRemove()
 	-Adding a card to Forty Thieves tableau pile increases its number of cards and results in that card being the tableau pile's new top card [4 points]
-	
+		*testaddingCard()
 	-Removing a card from Forty Thieves tableau pile decreases its number of cards and results in following card being the new top card [4 points]
-
+		*testRemovingCard()
 Forty Thieves Homecell pile tests: [8 points]
 	-Forty Thieves homecell piles initially hold 1 card [2 points]
 		*testInitial()
