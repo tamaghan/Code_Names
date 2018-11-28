@@ -43,10 +43,11 @@ public class ThievesTableauTest {
 		tp.initialSetup(d, tp);
 		assertEquals(101,d.getSize());
 		String s = tp.topCard().getSuit();
-		Card aceOfString = new Card(1, s);
-		Card twoOfString = new Card(2, s);
-		assertFalse(tp.add(aceOfString));
-		assertTrue(tp.add(twoOfString));
+		int rank = tp.topCard().getRank();
+		Card newCard = new Card(rank-1, s);
+		Card badCard = new Card(rank+1, s);
+		assertFalse(tp.add(badCard));
+		assertTrue(tp.add(newCard));
 	}
 	
 	
@@ -76,19 +77,20 @@ public class ThievesTableauTest {
 	@Test
 	public void testaddingCard() {
 		DoubleDeck d = new DoubleDeck();
-		ThievesTableau hc = new ThievesTableau();
-		hc.initialSetup(d, hc);
-		String cardsSuit = hc.topCard().getSuit();
-		Card twoRank = new Card(2, cardsSuit);
-		 hc.add(twoRank);
-		assertEquals(3,hc.getSize());
+		ThievesTableau tp = new ThievesTableau();
+		tp.initialSetup(d, tp);
+		String cardsSuit = tp.topCard().getSuit();
+		int rank = tp.topCard().getRank()-1;
+		Card twoRank = new Card(rank, cardsSuit);
+		tp.add(twoRank);
+		assertEquals(4,tp.getSize());
 		//assertEquals(true, hc.add(twoRank));
-		assertEquals(twoRank,hc.topCard());
+		assertEquals(twoRank,tp.topCard());
 	}
 	
 	/*
 	 * Removing a card from Forty Thieves tableau pile decreases its number of cards
-	 *  and results in following carddd being the new top card [4 points]
+	 *  and results in following card being the new top card [4 points]
 	 */
 	
 	@Test 
